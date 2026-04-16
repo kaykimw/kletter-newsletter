@@ -133,7 +133,7 @@
 <div class="container">
     <div class="logo">Kletter</div>
     <h1>JAPAN Weekly OTT<br>트렌드 리포트</h1>
-    <p class="desc">매주 월요일, 일본 OTT 시장의 화제 콘텐츠와<br>한국 콘텐츠 동향을 이메일로 받아보세요.</p>
+    <p class="desc">매주 금요일, 일본 OTT 시장의 화제 콘텐츠와<br>한국 콘텐츠 동향을 이메일로 받아보세요.</p>
 
     <div class="form-group">
         <input type="email" id="email" placeholder="이메일 주소를 입력하세요" required>
@@ -159,7 +159,8 @@ async function subscribe() {
     const btn = document.getElementById('subscribeBtn');
     const msg = document.getElementById('message');
 
-    if (!email || !email.includes('@')) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
         msg.className = 'message error';
         msg.textContent = '올바른 이메일 주소를 입력해주세요.';
         return;
@@ -179,7 +180,7 @@ async function subscribe() {
 
         if (res.ok) {
             msg.className = 'message success';
-            msg.textContent = '구독 완료! 매주 월요일 뉴스레터를 보내드릴게요.';
+            msg.textContent = '구독 완료! 매주 금요일 뉴스레터를 보내드릴게요.';
             document.getElementById('email').value = '';
         } else {
             msg.className = 'message error';

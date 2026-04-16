@@ -1,11 +1,30 @@
+const recentRequests = new Map();
+
 export default async function handler(req, res) {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
+    const clientIp = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown';
+    const now = Date.now();
+    const lastRequest = recentRequests.get(clientIp);
+    if (lastRequest && now - lastRequest < 10000) {
+        return res.status(429).json({ error: '잠시 후 다시 시도해주세요.' });
+    }
+    recentRequests.set(clientIp, now);
+
     const { email } = req.body;
 
-    if (!email || !email.includes('@')) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
         return res.status(400).json({ error: '올바른 이메일 주소를 입력해주세요.' });
     }
 
@@ -24,8 +43,6 @@ export default async function handler(req, res) {
                 }),
             }
         );
-
-        const data = await response.json();
 
         if (!response.ok) {
             return res.status(400).json({ error: '구독 처리 중 오류가 발생했습니다.' });
