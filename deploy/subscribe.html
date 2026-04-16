@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kletter — 구독하기</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+        background: #0A0A0B;
+        color: #F0F0F0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container {
+        max-width: 480px;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+    .logo {
+        font-size: 14px;
+        font-weight: 700;
+        color: #FF0558;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+    h1 {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+    .desc {
+        font-size: 15px;
+        color: #888;
+        line-height: 1.7;
+        margin-bottom: 32px;
+    }
+    .form-group {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+    .form-group input {
+        flex: 1;
+        padding: 14px 18px;
+        border-radius: 10px;
+        border: 1px solid #2A2A2E;
+        background: #151518;
+        color: #F0F0F0;
+        font-size: 15px;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+    .form-group input:focus {
+        border-color: #FF0558;
+    }
+    .form-group input::placeholder {
+        color: #555;
+    }
+    .form-group button {
+        padding: 14px 28px;
+        border-radius: 10px;
+        border: none;
+        background: #FF0558;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        white-space: nowrap;
+    }
+    .form-group button:hover { opacity: 0.9; }
+    .form-group button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    .message {
+        font-size: 14px;
+        margin-top: 8px;
+        min-height: 20px;
+    }
+    .message.success { color: #34D399; }
+    .message.error { color: #FF0558; }
+    .features {
+        margin-top: 40px;
+        text-align: left;
+        background: #151518;
+        border: 1px solid #2A2A2E;
+        border-radius: 12px;
+        padding: 24px 28px;
+    }
+    .features h3 {
+        font-size: 14px;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+    .features ul {
+        list-style: none;
+    }
+    .features li {
+        padding: 8px 0;
+        font-size: 14px;
+        color: #bbb;
+        border-bottom: 1px solid #2A2A2E;
+    }
+    .features li:last-child { border-bottom: none; }
+    .features li strong { color: #F0F0F0; }
+    .back-link {
+        display: inline-block;
+        margin-top: 28px;
+        color: #4DA8FF;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    @media (max-width: 500px) {
+        .form-group { flex-direction: column; }
+        h1 { font-size: 24px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">Kletter</div>
+    <h1>JAPAN Weekly OTT<br>트렌드 리포트</h1>
+    <p class="desc">매주 월요일, 일본 OTT 시장의 화제 콘텐츠와<br>한국 콘텐츠 동향을 이메일로 받아보세요.</p>
+
+    <div class="form-group">
+        <input type="email" id="email" placeholder="이메일 주소를 입력하세요" required>
+        <button id="subscribeBtn" onclick="subscribe()">구독하기</button>
+    </div>
+    <div class="message" id="message"></div>
+
+    <div class="features">
+        <h3>매주 받아보는 내용</h3>
+        <ul>
+            <li><strong>Netflix, Prime Video, Disney+, Hulu, U-NEXT</strong> 화제 콘텐츠</li>
+            <li><strong>한국 콘텐츠 스포트라이트</strong> — 일본에서 화제인 K-드라마/영화</li>
+            <li><strong>시장 동향 메모</strong> — OTT 업계 트렌드와 데이터</li>
+        </ul>
+    </div>
+
+    <a href="index.html" class="back-link">최신 뉴스레터 보기 &rarr;</a>
+</div>
+
+<script>
+async function subscribe() {
+    const email = document.getElementById('email').value.trim();
+    const btn = document.getElementById('subscribeBtn');
+    const msg = document.getElementById('message');
+
+    if (!email || !email.includes('@')) {
+        msg.className = 'message error';
+        msg.textContent = '올바른 이메일 주소를 입력해주세요.';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '처리 중...';
+    msg.textContent = '';
+
+    try {
+        const res = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+            msg.className = 'message success';
+            msg.textContent = '구독 완료! 매주 월요일 뉴스레터를 보내드릴게요.';
+            document.getElementById('email').value = '';
+        } else {
+            msg.className = 'message error';
+            msg.textContent = data.error || '오류가 발생했습니다. 다시 시도해주세요.';
+        }
+    } catch (e) {
+        msg.className = 'message error';
+        msg.textContent = '네트워크 오류가 발생했습니다. 다시 시도해주세요.';
+    }
+
+    btn.disabled = false;
+    btn.textContent = '구독하기';
+}
+</script>
+
+</body>
+</html>
