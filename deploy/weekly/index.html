@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTT Weekly Archive — Kletter</title>
+    <meta name="description" content="일본 OTT & 숏폼 드라마 주간 트렌드 리포트">
+    <meta name="adp-app-name" content="kletter">
+    <meta name="adp-owner" content="kay">
+    <style>
+        :root {
+            --primary: #FF0558;
+            --primary-dark: #D90048;
+            --bg: #0A0A0B;
+            --surface: #151518;
+            --surface-light: #1E1E22;
+            --text: #F0F0F0;
+            --text-muted: #888;
+            --border: #2A2A2E;
+            --accent-blue: #4DA8FF;
+            --accent-green: #34D399;
+            --accent-yellow: #FBBF24;
+            --accent-purple: #A78BFA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== GLOBAL NAV ===== */
+        .global-nav {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(10,10,11,0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 20px;
+        }
+        .global-nav-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .nav-link {
+            padding: 7px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .nav-link:hover { color: var(--text); background: var(--surface-light); }
+        .nav-link.active { color: var(--text); background: var(--surface); }
+        .nav-link.cta {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+        }
+        .nav-link.cta:hover { opacity: 0.9; }
+
+        .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+        .wide-container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+        .site-footer p { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+        .adp-service-desc { margin-top: 12px; font-size: 12px; color: #555; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .nav-link { padding: 6px 10px; font-size: 12px; }
+            .global-nav-inner { height: 48px; }
+        }
+
+        
+.page-header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+}
+.page-header h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+.page-header p { font-size: 14px; color: var(--text-muted); }
+
+.archive-list { list-style: none; }
+.archive-item {
+    display: block;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, transform 0.2s;
+}
+.archive-item:hover { border-color: var(--primary); transform: translateX(4px); }
+.archive-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.archive-item .meta { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.archive-item .summary { font-size: 13px; color: #aaa; line-height: 1.6; }
+
+    </style>
+</head>
+<body>
+
+<nav class="global-nav">
+    <div class="global-nav-inner">
+        <a href="/" class="nav-logo">Kletter</a>
+        <div class="nav-links">
+            <a href="/weekly" class="nav-link active">OTT</a>
+            <a href="/shortform" class="nav-link ">Shortform</a>
+            <a href="/subscribe" class="nav-link cta">구독</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="page-header">
+        <h1>OTT Weekly Archive</h1>
+        <p>일본 주요 OTT 플랫폼 주간 트렌드 리포트</p>
+    </div>
+
+    <div class="archive-list">
+        <a href="/weekly/2026-W17" class="archive-item">
+            <h3>2026년 4월 3주차 (W17)</h3>
+            <div class="meta">4/10 ~ 4/16 · 2026-04-18 발행</div>
+            <div class="summary">사냥개들 시즌2 Netflix Japan 1위, BEEF 시즌2 공개, 스타워즈: 몰 Disney+ 공개, 봄 애니메이션 시즌 개막</div>
+        </a>
+        <a href="/weekly/2026-W16" class="archive-item">
+            <h3>2026년 4월 2주차 (W16)</h3>
+            <div class="meta">4/3 ~ 4/9 · 2026-04-11 발행</div>
+            <div class="summary">구조의 대죄 Netflix 1위, 전슬라임 4기 봄 시즌, 더 보이즈 파이널 시즌 Prime Video</div>
+        </a>
+    </div>
+</div>
+
+
+<footer class="site-footer">
+    <p>일본 OTT & 숏폼 드라마 시장의 K-콘텐츠 트렌드를 매주 분석합니다.</p>
+    <p class="adp-service-desc">일본 OTT 주간 트렌드 리포트 — kletter.watcha.io</p>
+</footer>
+
+
+</body>
+</html>

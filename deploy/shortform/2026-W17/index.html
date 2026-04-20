@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortform W17 — Kletter</title>
+    <meta name="description" content="일본 OTT & 숏폼 드라마 주간 트렌드 리포트">
+    <meta name="adp-app-name" content="kletter">
+    <meta name="adp-owner" content="kay">
+    <style>
+        :root {
+            --primary: #FF0558;
+            --primary-dark: #D90048;
+            --bg: #0A0A0B;
+            --surface: #151518;
+            --surface-light: #1E1E22;
+            --text: #F0F0F0;
+            --text-muted: #888;
+            --border: #2A2A2E;
+            --accent-blue: #4DA8FF;
+            --accent-green: #34D399;
+            --accent-yellow: #FBBF24;
+            --accent-purple: #A78BFA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== GLOBAL NAV ===== */
+        .global-nav {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(10,10,11,0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 20px;
+        }
+        .global-nav-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .nav-link {
+            padding: 7px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .nav-link:hover { color: var(--text); background: var(--surface-light); }
+        .nav-link.active { color: var(--text); background: var(--surface); }
+        .nav-link.cta {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+        }
+        .nav-link.cta:hover { opacity: 0.9; }
+
+        .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+        .wide-container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+        .site-footer p { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+        .adp-service-desc { margin-top: 12px; font-size: 12px; color: #555; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .nav-link { padding: 6px 10px; font-size: 12px; }
+            .global-nav-inner { height: 48px; }
+        }
+
+        
+.sf-header {
+    background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 60%, #1a0a2e 100%);
+    padding: 40px 24px 28px;
+    text-align: center;
+}
+.sf-header h1 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.5px; }
+.sf-header .date { font-size: 14px; color: rgba(255,255,255,0.65); }
+
+.platform-nav {
+    position: sticky;
+    top: 56px;
+    z-index: 100;
+    background: rgba(10,10,11,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    overflow-x: auto;
+}
+.platform-nav .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    padding: 0 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.nav-btn {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform 0.15s, opacity 0.15s;
+}
+.nav-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+.container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+.platform-section { padding: 40px 0 8px; scroll-margin-top: 120px; }
+.platform-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--border);
+}
+.platform-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.15s;
+}
+.platform-badge:hover { opacity: 0.85; }
+.platform-header h2 { font-size: 20px; font-weight: 700; }
+
+.content-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    overflow: hidden;
+}
+.content-card:hover { border-color: var(--primary); box-shadow: 0 0 20px rgba(255,5,88,0.08); }
+.card-poster {
+    width: 120px;
+    min-height: 170px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center top;
+    background-color: var(--surface-light);
+}
+.card-body { padding: 20px 22px; flex: 1; min-width: 0; }
+.card-body .card-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.card-body .card-title a { color: var(--text); text-decoration: none; }
+.card-body .card-title a:hover { color: var(--primary); }
+.card-body .card-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+.card-body .card-desc { font-size: 13px; color: #aaa; line-height: 1.65; }
+
+.content-card.no-poster { display: block; }
+.content-card.no-poster .card-body { padding: 20px 22px; }
+
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-right: 4px; letter-spacing: 0.3px; }
+.tag-new { background: var(--primary); color: #fff; }
+.tag-hot { background: var(--accent-yellow); color: #000; }
+.tag-kr { background: var(--accent-purple); color: #fff; }
+.tag-free { background: var(--accent-green); color: #000; }
+.tag-top1 { background: var(--accent-yellow); color: #000; }
+
+.section-subtitle { font-size: 14px; margin: 22px 0 14px; color: var(--text-muted); font-weight: 600; }
+
+.ranking-table { width: 100%; border-collapse: collapse; margin-bottom: 26px; font-size: 14px; }
+.ranking-table thead th { background: var(--surface-light); padding: 10px 14px; text-align: left; font-weight: 600; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+.ranking-table tbody td { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+.ranking-table tbody tr:hover { background: var(--surface-light); }
+.rank-num { font-weight: 800; font-size: 16px; color: var(--accent-purple); }
+
+.summary-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin: 28px auto;
+    max-width: 760px;
+}
+.summary-section h2 { font-size: 16px; font-weight: 700; color: var(--accent-purple); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
+.summary-list { list-style: none; }
+.summary-list li { padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.6; }
+.summary-list li:last-child { border-bottom: none; }
+
+.editor-note {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-light) 100%);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-purple);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 0 auto 8px;
+    max-width: 760px;
+}
+.editor-note h2 { font-size: 15px; font-weight: 700; color: var(--accent-purple); margin-bottom: 12px; }
+.editor-note p { font-size: 14px; color: #bbb; line-height: 1.8; margin-bottom: 10px; }
+.editor-note p:last-child { margin-bottom: 0; }
+.editor-note strong { color: var(--text); }
+
+.platform-desc { font-size: 13px; color: var(--text-muted); margin: -10px 0 18px; }
+.platform-desc a { color: var(--accent-blue); text-decoration: none; }
+.platform-desc a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+    .sf-header h1 { font-size: 20px; }
+    .nav-btn { font-size: 11px; padding: 5px 12px; }
+    .card-poster { width: 90px; min-height: 130px; }
+    .card-body { padding: 14px; }
+    .summary-section { padding: 20px; }
+    .ranking-table { font-size: 12px; }
+    .ranking-table thead th, .ranking-table tbody td { padding: 8px 10px; }
+}
+
+    </style>
+</head>
+<body>
+
+<nav class="global-nav">
+    <div class="global-nav-inner">
+        <a href="/" class="nav-logo">Kletter</a>
+        <div class="nav-links">
+            <a href="/weekly" class="nav-link ">OTT</a>
+            <a href="/shortform" class="nav-link active">Shortform</a>
+            <a href="/subscribe" class="nav-link cta">구독</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="sf-header">
+    <h1>일본 숏폼 드라마 OTT 위클리</h1>
+    <div class="date">2026년 4월 3주차 (4/14 ~ 4/20)</div>
+</div>
+
+<nav class="platform-nav">
+    <div class="nav-inner">
+        <a href="#bump" class="nav-btn" style="background:#FF6B6B;">BUMP</a>
+        <a href="#tatedra" class="nav-btn" style="background:#6366F1;">TateDora</a>
+        <a href="#reelshort" class="nav-btn" style="background:#E11D48;">ReelShort</a>
+        <a href="#unireel" class="nav-btn" style="background:#8B5CF6;">UniReel</a>
+        <a href="#fanyd" class="nav-btn" style="background:#FFD700;color:#000;">FANY:D</a>
+        <a href="#million" class="nav-btn" style="background:#FF8C00;">Million</a>
+        <a href="#kanta" class="nav-btn" style="background:#00BCD4;">Kanta</a>
+        <a href="#rakuten" class="nav-btn" style="background:#BF0000;">Rakuten</a>
+    </div>
+</nav>
+
+<!-- 핵심 요약 -->
+<div class="container">
+    <div class="summary-section">
+        <h2>이번 주 핵심 요약</h2>
+        <ul class="summary-list">
+            <li><strong>BUMP</strong>, App Store 엔터테인먼트 무료 1위 달성. 소출 케이스케 주연 '3000万稼げ！' SNS 화제</li>
+            <li><strong>TateDora</strong>, 4/20 신작 '岡田康太35歳、モテすぎて困ってます。' 독점 배포 개시. 노기자카46 이치노세 미소라 공연</li>
+            <li><strong>FANY:D</strong> '호텔에서 죽다(ホテルに死す)' 캠페인 진행 중. 롱코트다디 출연으로 화제</li>
+            <li><strong>UniReel</strong>(ReelShort 일본판), '最期の授業' 부산 아시아 숏드라마 어워드 수상</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Editor's Note -->
+<div class="container">
+    <div class="editor-note">
+        <h2>EDITOR'S NOTE</h2>
+        <p>이번 주 가장 주목할 포인트는 <strong>BUMP의 App Store 1위 달성</strong>입니다. 2022년 말 서비스 시작 이후 3년 반 만에 300만 DL을 돌파하고, 100개국 글로벌 전개까지 이뤄낸 일본 국산 숏드라마 앱의 저력이 인상적이에요.</p>
+        <p>한편 <strong>TateDora</strong>는 유튜버 오카다 코타(채널 등록자 85만)를 주연으로 캐스팅한 신작을 이번 주 공개하며, <strong>SNS 크리에이터 × 숏드라마</strong>라는 공식을 실험 중입니다. 노기자카46 멤버, 3시의 히로인 등 다양한 캐스트가 참여해 화제성을 높이고 있어요.</p>
+        <p><strong>UniReel</strong>은 ReelShort의 일본 로컬라이징 전략이 주효하면서, 일본 TV국(닛테레)과의 협업으로 '最期の授業'가 부산 어워드에서 수상하는 등 퀄리티 면에서도 인정받고 있습니다.</p>
+    </div>
+</div>
+
+<!-- BUMP -->
+<div class="platform-section" id="bump">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://lp.bump.studio/" target="_blank" class="platform-badge" style="background:#FF6B6B;">BUMP</a>
+            <h2>BUMP</h2>
+        </div>
+        <p class="platform-desc">일본 최대 숏드라마 전문 앱 · 300만 DL+ · 100개국 전개 · 1화 1~3분 · App Store 엔터테인먼트 1위 · <a href="https://x.com/bump_drama" target="_blank">@bump_drama</a></p>
+
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://prcdn.freetls.fastly.net/release_image/97979/12/97979-12-c047a7cf6718b3acadb9e9e0843e8e93-1080x1350.png');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-hot">HOT</span> <span class="tag tag-top1">APP 1위</span> <a href="https://lp.bump.studio/rZEvT80i/3000mankasege" target="_blank">3000万稼げ！ (3000만 벌어라！)</a></div>
+                <div class="card-meta">서스펜스 · 4/1 배포 개시 · 소출 케이스케(小出恵介) 주연</div>
+                <div class="card-desc">카부키쵸에서 넘버원 호스트 '히코보시 토야'로 이름을 날렸지만, 아내의 죽음을 계기로 모습을 감춘 남자. 사랑하는 딸의 수술비 3000만엔을 단 1개월 만에 벌어야 하는 상황에 몰린다. 배포 직후 SNS 폭발적 화제.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://cdn.prod.flashdrama.com/image/drama/thumbnail/origin/019c996b-d220-768c-a263-cd71adbf943b.png');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://lp.bump.studio/rZEvT80i/" target="_blank">権力の花園 (권력의 화원)</a></div>
+                <div class="card-meta">서스펜스 · 무료 10화 · 키타다 쇼이치로 주연</div>
+                <div class="card-desc">권력과 욕망이 소용돌이치는 조직 내부의 암투를 그린 서스펜스 드라마.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://i.ytimg.com/vi/js9vgXzwzaQ/hqdefault.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://lp.bump.studio/rZEvT80i/" target="_blank">大富豪のバツイチ孫娘 (대부호의 돌싱 손녀)</a></div>
+                <div class="card-meta">로맨스 · 전 83화 · 중국 웹소설 원작 일본판 리메이크</div>
+                <div class="card-desc">키리시마 그룹 사장 키리시마 쇼지와 비서 겸 아내 호시노 카논은 3년간 비밀 결혼 생활 중. 출장 중 비행기 사고로 입원한 카논이 남편이 다른 여자와 산부인과를 방문하는 현장을 목격하면서 애증의 드라마가 시작된다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://prcdn.freetls.fastly.net/release_image/4237/1750/4237-1750-1f0d3b28e966bb7aaed29cca66baa3fe-906x1538.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://lp.bump.studio/rZEvT80i/gokuakuinfuruensaaniseisaio" target="_blank">極悪インフルエンサーに制裁を (극악 인플루언서에게 제재를)</a></div>
+                <div class="card-meta">복수극 · 쿠리바야시 아이키 주연 · 원 다카라즈카 유이카렌 출연</div>
+                <div class="card-desc">인플루언서 회사 'Yabee'에 입사한 지미한 신입 하나다 사키코(팔로워 1명)는 카리스마 인플루언서 치사토(팔로워 500만)에게 괴롭힘을 당한다. 하지만 사키코에게는 비밀이 있었다 — 사실 그녀는 치사토에게 염상 당해 사라진 전 직원의 언니이자, 전설의 익명 인플루언서이며, 일본 최강 극도의 딸이었다.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TateDora -->
+<div class="platform-section" id="tatedra">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://tated.tv/" target="_blank" class="platform-badge" style="background:#6366F1;">TateDora</a>
+            <h2>TateDora (タテドラ)</h2>
+        </div>
+        <p class="platform-desc">DONUTS 운영 · 세로형 숏드라마 전문 · 1화 1~2분 · 등록 불필요 · <a href="https://x.com/tated_tv" target="_blank">@tated_tv</a> · <a href="https://x.com/tated_drama" target="_blank">@tated_drama</a></p>
+
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://tated.tv/wp-content/uploads/2026/04/kv_okamote_vertical-scaled.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-new">NEW</span> <span class="tag tag-hot">이번 주</span> <a href="https://tated.tv/okamote/" target="_blank">岡田康太35歳、モテすぎて困ってます。</a></div>
+                <div class="card-meta">로맨스/코미디 · 4/20 19:00 독점 배포 · 전 48화</div>
+                <div class="card-desc"><strong>출연:</strong> 오카다 코타(YouTube 85만), 모리 카스미, 이치노세 미소라(노기자카46), 후쿠다 마키(3시의 히로인), NICO(헤이세이 플라밍고), 호시노 마리. <strong>감독/각본:</strong> 마사이케 요스케(일본 아카데미상 우수각본상). 항구区 월세 3만7천엔 아파트에 사는 오카다 앞에 6명의 미녀가 차례로 나타나 맹렬히 어필하는 신감각 연애 드라마.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://tated.tv/wp-content/uploads/2026/03/FURIN_KV縦_FIX-scaled.png');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://tated.tv/" target="_blank">夫に抱かれながら (남편에게 안기면서)</a></div>
+                <div class="card-meta">불륜/서스펜스 · 배포 중</div>
+                <div class="card-desc">남편에게 안기면서도 다른 남자를 생각하는 아내의 이중생활을 그린 대담한 서스펜스.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://prcdn.freetls.fastly.net/release_image/4237/1750/4237-1750-4eb6ce9624f77c33792afd3fbb0174b8-1920x1080.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://tated.tv/revenge-show/" target="_blank">リベンジショー (리벤지 쇼)</a></div>
+                <div class="card-meta">복수극 · 전 50화 · 나카지마 소타(FANTASTICS) 주연, 코니시 에이토 출연 · 3부 배포 중</div>
+                <div class="card-desc">등록자 200만 폭로계 복면 스트리머 'Wataridori'로 활동 중인 쇼(나카지마 소타)가, 일본 최대 엔터 기업 회장인 아버지의 의뢰로 비서 타카하시(코니시 에이토)와 함께 청소부로 위장하여 회사에 잠입. 사내 부조리와 비리를 하나씩 폭로하며 통쾌한 역전극을 펼친다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://tated.tv/wp-content/themes/tated-web_260407/static/img/zetsupro/img_mainvisual_cast.webp');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://tated.tv/zetsupro/" target="_blank">絶望プロポーズ (절망 프로포즈)</a></div>
+                <div class="card-meta">로맨스 · 사토 다이키(FANTASTICS), 카논 주연 · 전 51화 · 배포 중</div>
+                <div class="card-desc">절망적으로 재미없는 부자 이케멘 남자친구에게 프로포즈를 받은 히로인의 신감각 러브코미디. 각본 우에다 코헤이.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ReelShort -->
+<div class="platform-section" id="reelshort">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://www.reelshort.com/" target="_blank" class="platform-badge" style="background:#E11D48;">ReelShort</a>
+            <h2>ReelShort</h2>
+        </div>
+        <p class="platform-desc">중국 Crazy Maple Studio · 글로벌 3.7억 DL · 수익 7억$ · 시장점유율 52% · <a href="https://x.com/ReelShort" target="_blank">@ReelShort</a></p>
+
+        <div class="content-card" style="border-left:4px solid #E11D48;">
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-hot">GLOBAL</span> 글로벌 숏드라마 시장 지배</div>
+                <div class="card-meta">해외 숏드라마 앱 다운로드 52% · 수익 48% 점유 · 3.7억 DL · 수익 7억$</div>
+                <div class="card-desc">ReelShort는 일본 시장에서 직접 서비스하기보다, 일본 전용 앱 <strong>UniReel</strong>(아래 참조)을 통해 로컬라이즈 전략을 전개 중. 글로벌에서는 로맨스·복수극·재벌물 중심의 영어권 콘텐츠가 여전히 강세. 2026년 일본 세로형 숏드라마 시장은 <strong>1,530억엔</strong> 규모로 성장 전망.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- UniReel -->
+<div class="platform-section" id="unireel">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://apps.apple.com/jp/app/unireel/id6695744224" target="_blank" class="platform-badge" style="background:#8B5CF6;">UniReel</a>
+            <h2>UniReel (ユニリール)</h2>
+        </div>
+        <p class="platform-desc">ReelShort 일본판 · COL JAPAN 운영 · 2024/11 서비스 개시 · 종량과금형 · 2028년까지 100편+ 오리지널 예정 · <a href="https://x.com/UniReel_App" target="_blank">@UniReel_App</a></p>
+
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://www.cinemacafe.net/imgs/thumb_h1/684850.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-hot">수상</span> <a href="https://www.cinemacafe.net/article/2024/10/29/94754.html" target="_blank">最期の授業 ―生き残った者だけが卒業― (최후의 수업)</a></div>
+                <div class="card-meta">학원 데스게임 · 야기 유세이(FANTASTICS) 주연 · 닛테레 기획 제작</div>
+                <div class="card-desc">부산 아시아 숏드라마 어워드 '최우수 배우상' 수상. 배포 1주 만에 100만 재생 돌파. 일본 TV국 최초의 세로형 과금 숏드라마로, 학원 서바이벌 데스게임을 그린다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://prcdn.freetls.fastly.net/release_image/97979/12/97979-12-99cc8f8864f7062788f942c3ce920480-1200x630.png');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://x.com/UniReel_App/status/1912815805139755073" target="_blank">君を駆ける (너를 달리다)</a></div>
+                <div class="card-meta">로맨스 · 나카지마 소타(FANTASTICS), 스나다 마사히로 출연</div>
+                <div class="card-desc">4/17 배포 직전 스페셜 LIVE 배포. 4/18 전화 일제 배포 예정. 청춘 로맨스.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://www.cinemacafe.net/imgs/thumb_h1/684850.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-hot">수상</span> <a href="https://www.unireel.tv/player/?id=241252962369015808&name=%E4%BB%96%E4%BA%BA%E6%9C%AA%E6%BA%80" target="_blank">他人未満 ―親愛なる疎ましい貴方― (타인 미만)</a></div>
+                <div class="card-meta">드라마 · 부산 아시아 숏드라마 어워드 '베스트 트렌드상' 수상</div>
+                <div class="card-desc">가까우면서도 먼 두 사람의 관계를 그린 인간 드라마. 부산 어워드에서 트렌드상을 수상하며 작품성 인정.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://prcdn.freetls.fastly.net/release_image/118235/17/118235-17-fbde1c8e06a2d2d15be27296e3c74a37-1080x1920.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://prtimes.jp/main/html/rd/p/000000017.000118235.html" target="_blank">合コンの悪魔 ～サレ妻たちの華麗なる復讐～ (미팅의 악마)</a></div>
+                <div class="card-meta">복수극 · 모리 카스미 주연 · 전 10화 · BUMP에서도 4/24 배포 확대</div>
+                <div class="card-desc">남편의 바람과 DV에 시달리는 아내들이 SNS '사레아내들의 비명' 계정을 운영하며 화려한 복수를 펼치는 이야기. 호평으로 BUMP에서도 배포 확대 결정.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FANY:D -->
+<div class="platform-section" id="fanyd">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://fany-d.com/" target="_blank" class="platform-badge" style="background:#FFD700;color:#000;">FANY:D</a>
+            <h2>FANY:D</h2>
+        </div>
+        <p class="platform-desc">요시모토 흥업 × NTT 도코모 × Minto 공동 운영 · 2024/12 서비스 개시 · 연간 50편+ 오리지널 · BL/코미디/복수/연애 · 116작품+ · <a href="https://x.com/FANY_Drama" target="_blank">@FANY_Drama</a></p>
+
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://public-content.fany-d.com/works/g6qajsqvz9yj693rytxppbt1/thumbnail_vertical_20251201103813.png');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-hot">HOT</span> <a href="https://fany-d.com/" target="_blank">ホテルに死す (호텔에서 죽다)</a></div>
+                <div class="card-meta">미스터리/코미디 · 롱코트다디(도마에, 우사기) 출연 · 캠페인 4/14까지</div>
+                <div class="card-desc">호텔을 무대로 한 미스터리 코미디. 롱코트다디 직필 사인 체키 증정 캠페인 진행 중. FANY:D의 요시모토 개그맨 × 숏드라마 공식의 대표작.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://public-content.fany-d.com/works/g0a20donm9zbnivl3x15saoc/thumbnail_vertical_20260319090210.png');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://fany-d.com/" target="_blank">今、晒してます。 (지금, 공개합니다)</a></div>
+                <div class="card-meta">서스펜스 · 2026/3 배포</div>
+                <div class="card-desc">SNS 폭로를 소재로 한 서스펜스 숏드라마. 현대 사회의 개인정보 유출 공포를 다룬다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://public-content.fany-d.com/works/wfde1rwas8er4kqcnv0wqfud/thumbnail_vertical_20260203053121.png');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://fany-d.com/" target="_blank">陰キャなアイツが義理の兄！？ (음캐인 그 녀석이 의붓오빠!?)</a></div>
+                <div class="card-meta">로맨스/코미디 · 2026/2 배포</div>
+                <div class="card-desc">내성적인 남자가 갑자기 의붓오빠가 되면서 벌어지는 코믹 로맨스.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://public-content.fany-d.com/works/vz6sgvo5o722knh8qc4yrgf0/thumbnail_vertical_20251201025516.png');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://fany-d.com/" target="_blank">バグルフィクション (버그르 픽션)</a></div>
+                <div class="card-meta">코미디 · NMB48 멤버 출연 · 사인 체키 캠페인</div>
+                <div class="card-desc">NMB48 멤버 14명이 출연하는 코미디 숏드라마. 팬 대상 사인 체키 증정 캠페인 진행.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Million -->
+<div class="platform-section" id="million">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://milliontv.jp/" target="_blank" class="platform-badge" style="background:#FF8C00;">Million</a>
+            <h2>Million (ミリオン)</h2>
+        </div>
+        <p class="platform-desc">FLASH Inc. 운영 · 1화 2분 · 무료+코인 과금 모델 · 로맨스/코미디/미스터리/호러</p>
+
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://cdn.prod.flashdrama.com/image/drama/thumbnail/origin/019cf485-14fa-759a-b838-034d01724543.jpeg');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-top1">인기</span> <a href="https://milliontv.jp/" target="_blank">終末の同窓会 (종말의 동창회)</a></div>
+                <div class="card-meta">복수극 · 무료 10화</div>
+                <div class="card-desc">동창회를 배경으로 벌어지는 복수극. Million 인기 1위 작품.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://cdn.prod.flashdrama.com/image/drama/thumbnail/origin/019cf48a-d93a-73b9-81bc-debcfd756c88.jpeg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://milliontv.jp/" target="_blank">プロ彼女の条件２ (프로 여친의 조건 2)</a></div>
+                <div class="card-meta">로맨스 · 무료 3화</div>
+                <div class="card-desc">프로 스포츠 선수의 여자친구가 되기 위한 조건을 그린 로맨스 시리즈 시즌2.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://cdn.prod.flashdrama.com/image/drama/thumbnail/origin/019d61a0-e750-7799-81d7-88b5b9c8ef24.png');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://milliontv.jp/" target="_blank">教愛 (교애)</a></div>
+                <div class="card-meta">휴먼드라마 · 무료 9화</div>
+                <div class="card-desc">교육 현장에서 벌어지는 사랑과 갈등의 인간 드라마.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kanta -->
+<div class="platform-section" id="kanta">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://kantashort.com/" target="_blank" class="platform-badge" style="background:#00BCD4;">Kanta</a>
+            <h2>Kanta (カンタ)</h2>
+        </div>
+        <p class="platform-desc">한국 RIDI 운영 · 1분에 마음을 사로잡는 숏드라마 · 5초 광고로 무료 시청 · 8개 언어 지원 · <a href="https://www.instagram.com/watchkanta_jp/" target="_blank">@watchkanta_jp</a></p>
+
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://thetv.jp/i/nw/1279168/14949561.jpg?w=1284');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <span class="tag tag-hot">HOT</span> <a href="https://thetv.jp/news/detail/1279168/" target="_blank">電脳サラリーマン、チョン課長 (전뇌 샐러리맨, 정과장)</a></div>
+                <div class="card-meta">액션 코미디 · 전 33화 · ATEEZ 윤호 출연</div>
+                <div class="card-desc">대기업의 만년 과장 정장장이 자체 개발한 스마트 글래스 '디지털 브레인 알파'로 사내 악역들에게 통쾌하게 역전하는 액션 코미디. <strong>ATEEZ 윤호</strong>가 인턴 민혁 역으로 숏드라마 첫 출연.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://thetv.jp/i/nw/1279168/14949559.jpg?w=1284');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <a href="https://screenonline.jp/_ct/17793912" target="_blank">韓ドラ・イッキ見フェス (한드라 몰아보기 페스)</a></div>
+                <div class="card-meta">한국 드라마 숏폼 일제 배포</div>
+                <div class="card-desc">Kanta에서 한국 드라마 숏폼 콘텐츠를 한꺼번에 즐길 수 있는 스페셜 이벤트 진행. 한국발 플랫폼답게 K-숏드라마 라인업이 강점.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Rakuten -->
+<div class="platform-section" id="rakuten">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://tv.rakuten.co.jp/" target="_blank" class="platform-badge" style="background:#BF0000;">Rakuten</a>
+            <h2>Rakuten TV</h2>
+        </div>
+        <p class="platform-desc">Rakuten TV · Rチャンネル(무료) · 한국 드라마 편성 강화 · <a href="https://x.com/rakutentv_japan" target="_blank">@rakutentv_japan</a></p>
+
+        <div class="content-card" style="border-left:4px solid #BF0000;">
+            <div class="card-body">
+                <div class="card-title">Rakuten TV 숏드라마 동향</div>
+                <div class="card-meta">Rチャンネル 무료 배포 · 한국 드라마 편성</div>
+                <div class="card-desc">Rakuten은 전용 숏드라마 앱보다 Rakuten TV와 무료 채널 Rチャンネル을 통해 한국 드라마·아시아 콘텐츠 편성을 강화하는 전략. 숏폼 전문 플랫폼과는 다른 포지셔닝으로, 기존 TV 시청자 대상 숏폼 콘텐츠 도입을 검토 중인 것으로 보임.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="site-footer">
+    <p>일본 OTT & 숏폼 드라마 시장의 K-콘텐츠 트렌드를 매주 분석합니다.</p>
+    <p class="adp-service-desc">일본 OTT 주간 트렌드 리포트 — kletter.watcha.io</p>
+</footer>
+
+
+</body>
+</html>
