@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAPAN Weekly OTT 트렌드 리포트 — 2026년 4월 3주차</title>
+    <title>Kletter — 일본 OTT & 숏폼 트렌드 리포트</title>
+    <meta name="description" content="일본 OTT & 숏폼 드라마 주간 트렌드 리포트">
+    <meta name="adp-app-name" content="kletter">
+    <meta name="adp-owner" content="kay">
     <style>
         :root {
             --primary: #FF0558;
@@ -21,7 +24,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: auto; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
@@ -31,654 +33,272 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ===== HEADER ===== */
-        .header {
-            background: linear-gradient(135deg, var(--primary) 0%, #8B0033 70%, #3D0015 100%);
-            padding: 40px 24px 28px;
-            text-align: center;
-        }
-        .header h1 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.5px; }
-        .header .date { font-size: 14px; color: rgba(255,255,255,0.65); }
-
-        /* ===== STICKY NAV ===== */
-        .platform-nav {
+        /* ===== GLOBAL NAV ===== */
+        .global-nav {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(10,10,11,0.92);
+            z-index: 200;
+            background: rgba(10,10,11,0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-            padding: 10px 0;
-            overflow-x: auto;
+            padding: 0 20px;
         }
-        .platform-nav .nav-inner {
-            max-width: 760px;
+        .global-nav-inner {
+            max-width: 960px;
             margin: 0 auto;
             display: flex;
-            gap: 8px;
-            padding: 0 20px;
-            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
         }
-        .nav-btn {
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            color: #fff;
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
             text-decoration: none;
-            white-space: nowrap;
-            transition: transform 0.15s, opacity 0.15s;
+            letter-spacing: -0.5px;
         }
-        .nav-btn:hover { transform: scale(1.05); opacity: 0.9; }
-        .nav-btn.nb-nf { background: #E50914; }
-        .nav-btn.nb-ap { background: #00A8E1; }
-        .nav-btn.nb-dp { background: #113CCF; }
-        .nav-btn.nb-hu { background: #1CE783; color: #000; }
-        .nav-btn.nb-un { background: #00C8AD; }
-        .nav-btn.nb-kr { background: var(--accent-purple); }
-        .nav-btn.nb-tr { background: var(--accent-green); color: #000; }
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .nav-link {
+            padding: 7px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .nav-link:hover { color: var(--text); background: var(--surface-light); }
+        .nav-link.active { color: var(--text); background: var(--surface); }
+        .nav-link.cta {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+        }
+        .nav-link.cta:hover { opacity: 0.9; }
 
         .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-
-        /* ===== HERO ===== */
-        .hero {
-            position: relative;
-            max-width: 760px;
-            margin: 28px auto 0;
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--surface);
-            display: flex;
-            min-height: 280px;
-        }
-        .hero-img {
-            width: 220px;
-            flex-shrink: 0;
-            background-size: cover;
-            background-position: center;
-        }
-        .hero-body {
-            padding: 32px 36px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            flex: 1;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--accent-yellow);
-            color: #000;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 4px;
-            width: fit-content;
-            margin-bottom: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .hero h2 { font-size: 24px; font-weight: 800; margin-bottom: 6px; line-height: 1.3; }
-        .hero h2 a { color: var(--text); text-decoration: none; }
-        .hero h2 a:hover { color: var(--primary); }
-        .hero .hero-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
-        .hero .hero-desc { font-size: 14px; color: #bbb; line-height: 1.7; }
-        .hero .hero-platform { display: inline-block; background: #E50914; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; margin-bottom: 10px; }
-
-        /* ===== SUMMARY ===== */
-        .summary-section {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 28px 32px;
-            margin: 28px auto;
-            max-width: 760px;
-        }
-        .summary-section h2 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
-        .summary-list { list-style: none; }
-        .summary-list li { padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.6; }
-        .summary-list li:last-child { border-bottom: none; }
-        .summary-list li a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
-        .summary-list li a:hover { text-decoration: underline; }
-
-        /* ===== PLATFORM SECTION ===== */
-        .platform-section { padding: 40px 0 8px; scroll-margin-top: 60px; }
-        .spotlight-wrap { scroll-margin-top: 60px; }
-        .trends-section { scroll-margin-top: 60px; }
-        .platform-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 22px;
-            padding-bottom: 14px;
-            border-bottom: 2px solid var(--border);
-        }
-        .platform-badge {
-            display: inline-block;
-            padding: 5px 14px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 700;
-            color: #fff;
-            text-decoration: none;
-            transition: opacity 0.15s;
-        }
-        .platform-badge:hover { opacity: 0.85; }
-        .badge-netflix { background: #E50914; }
-        .badge-amazon { background: #00A8E1; }
-        .badge-disney { background: #113CCF; }
-        .badge-unext { background: #00C8AD; }
-        .platform-header h2 { font-size: 20px; font-weight: 700; }
-
-        /* ===== RANKING TABLE ===== */
-        .ranking-table { width: 100%; border-collapse: collapse; margin-bottom: 26px; font-size: 14px; }
-        .ranking-table thead th { background: var(--surface-light); padding: 10px 14px; text-align: left; font-weight: 600; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .ranking-table tbody td { padding: 12px 14px; border-bottom: 1px solid var(--border); }
-        .ranking-table tbody tr:hover { background: var(--surface-light); }
-        .rank-num { font-weight: 800; font-size: 16px; color: var(--primary); }
-
-        /* ===== CONTENT CARD ===== */
-        .content-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 14px;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            display: flex;
-            overflow: hidden;
-        }
-        .content-card:hover { border-color: var(--primary); box-shadow: 0 0 20px rgba(255,5,88,0.08); }
-        .card-poster { width: 140px; height: 190px; flex-shrink: 0; background-size: cover; background-position: center; background-color: var(--surface-light); }
-        .card-body { padding: 20px 22px; flex: 1; min-width: 0; }
-        .card-body .card-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-        .card-body .card-title a { color: var(--text); text-decoration: none; }
-        .card-body .card-title a:hover { color: var(--primary); }
-        .card-body .card-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
-        .card-body .card-desc { font-size: 13px; color: #aaa; line-height: 1.65; }
-
-        .content-card.no-poster { display: block; }
-        .content-card.no-poster .card-body { padding: 20px 22px; }
-
-        /* ===== TAGS ===== */
-        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-right: 4px; letter-spacing: 0.3px; }
-        .tag-new { background: var(--primary); color: #fff; }
-        .tag-top1 { background: var(--accent-yellow); color: #000; }
-        .tag-kr { background: var(--accent-purple); color: #fff; }
-        .tag-upcoming { background: var(--surface-light); color: var(--text-muted); border: 1px solid var(--border); }
-
-        .section-subtitle { font-size: 14px; margin: 22px 0 14px; color: var(--text-muted); font-weight: 600; }
-
-        /* ===== SPOTLIGHT (K-Content) ===== */
-        .spotlight-wrap {
-            background: linear-gradient(180deg, rgba(167,139,250,0.08) 0%, rgba(167,139,250,0.02) 100%);
-            border-top: 2px solid var(--accent-purple);
-            border-bottom: 2px solid var(--accent-purple);
-            padding: 44px 0;
-            margin: 44px 0;
-        }
-        .spotlight-section { max-width: 760px; margin: 0 auto; }
-        .spotlight-section > h2 { font-size: 22px; font-weight: 800; margin-bottom: 6px; color: var(--accent-purple); }
-        .spotlight-section > p { font-size: 14px; color: var(--text-muted); margin-bottom: 26px; }
-        .spotlight-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 14px;
-            border-left: 4px solid var(--accent-purple);
-            display: flex;
-            overflow: hidden;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .spotlight-card:hover { box-shadow: 0 0 24px rgba(167,139,250,0.1); }
-        .spotlight-poster { width: 140px; height: 190px; flex-shrink: 0; background-size: cover; background-position: center; background-color: var(--surface-light); }
-        .spotlight-body { padding: 22px 26px; flex: 1; min-width: 0; }
-        .spotlight-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-        .spotlight-body h3 a { color: var(--text); text-decoration: none; }
-        .spotlight-body h3 a:hover { color: var(--accent-purple); }
-        .spotlight-body .platform-label { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
-        .spotlight-body dl { display: grid; grid-template-columns: 60px 1fr; gap: 6px 12px; font-size: 13px; }
-        .spotlight-body dt { font-weight: 600; color: var(--text-muted); }
-        .spotlight-body dd { color: #bbb; }
-        .spotlight-body dd a { color: var(--accent-blue); text-decoration: none; }
-        .spotlight-body dd a:hover { text-decoration: underline; }
-
-        /* ===== TRENDS ===== */
-        .trends-section { margin: 44px auto; max-width: 760px; }
-        .trends-section h2 { font-size: 20px; font-weight: 800; margin-bottom: 20px; color: var(--accent-green); }
-        .trend-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
-        .trend-item:last-child { border-bottom: none; }
-        .trend-num { font-size: 22px; font-weight: 800; color: var(--accent-green); min-width: 30px; }
-        .trend-item h3 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
-        .trend-item p { font-size: 13px; color: #888; line-height: 1.6; }
+        .wide-container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
 
         /* ===== FOOTER ===== */
-        .footer { text-align: center; padding: 36px 20px; border-top: 1px solid var(--border); margin-top: 44px; }
-        .footer p { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
-        .footer .next-issue { display: inline-block; margin-top: 14px; padding: 10px 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text); font-weight: 600; }
+        .site-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+        .site-footer p { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+        .adp-service-desc { margin-top: 12px; font-size: 12px; color: #555; }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 640px) {
-            .header h1 { font-size: 20px; }
-            .hero { flex-direction: column; min-height: auto; }
-            .hero-img { width: 100%; height: 200px; }
-            .hero-body { padding: 22px; }
-            .hero h2 { font-size: 20px; }
-            .summary-section { padding: 20px; }
-            .card-poster { width: 100px; height: 140px; }
-            .card-body { padding: 14px; }
-            .spotlight-poster { width: 100px; height: 140px; }
-            .spotlight-body { padding: 14px; }
-            .spotlight-body dl { grid-template-columns: 1fr; }
-            .spotlight-body dt { margin-top: 4px; }
-            .ranking-table { font-size: 12px; }
-            .ranking-table thead th, .ranking-table tbody td { padding: 8px 10px; }
-            .nav-btn { font-size: 11px; padding: 5px 12px; }
+            .nav-link { padding: 6px 10px; font-size: 12px; }
+            .global-nav-inner { height: 48px; }
         }
+
+        
+.hero-section {
+    background: linear-gradient(135deg, var(--primary) 0%, #8B0033 50%, #1a0a1a 100%);
+    padding: 40px 20px 32px;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+}
+.hero-section .tagline {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-top: 48px;
+}
+.section-header h2 { font-size: 22px; font-weight: 800; }
+.section-header a { font-size: 13px; color: var(--accent-blue); text-decoration: none; font-weight: 600; }
+.section-header a:hover { text-decoration: underline; }
+
+.report-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.report-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+.report-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 20px rgba(255,5,88,0.1);
+    transform: translateY(-2px);
+}
+.report-card .card-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+.report-card .card-label.ott { color: var(--primary); }
+.report-card .card-label.shortform { color: var(--accent-purple); }
+.report-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+.report-card .card-date { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+.report-card .card-summary { font-size: 13px; color: #aaa; line-height: 1.7; flex: 1; }
+.report-card .card-arrow { font-size: 13px; color: var(--accent-blue); margin-top: 16px; font-weight: 600; }
+
+.about-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 36px;
+    margin-top: 48px;
+}
+.about-section h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--primary); }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.about-item h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.about-item p { font-size: 13px; color: #aaa; line-height: 1.7; }
+
+.archive-toggle-wrap {
+    margin-top: 24px;
+}
+.archive-toggle-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+.archive-toggle-btn:hover { color: var(--text); border-color: var(--primary); }
+.archive-dropdown { display: none; margin-top: 12px; }
+.archive-dropdown.open { display: block; }
+
+@media (max-width: 640px) {
+    .hero-section { padding: 32px 20px 24px; }
+    .hero-section h1 { font-size: 20px; }
+    .report-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+}
+
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h1>JAPAN Weekly OTT 트렌드 리포트</h1>
-    <div class="date">2026년 4월 3주차 (4/10 ~ 4/16)</div>
-</div>
-
-<!-- Sticky Nav -->
-<nav class="platform-nav">
-    <div class="nav-inner">
-        <a href="#netflix" class="nav-btn nb-nf">Netflix</a>
-        <a href="#primevideo" class="nav-btn nb-ap">Prime Video</a>
-        <a href="#disneyplus" class="nav-btn nb-dp">Disney+</a>
-        <a href="#hulu" class="nav-btn nb-hu">Hulu</a>
-        <a href="#unext" class="nav-btn nb-un">U-NEXT</a>
-        <a href="#tver" class="nav-btn" style="background:#0068B7;">TVer</a>
-        <a href="#k-spotlight" class="nav-btn nb-kr">K-콘텐츠</a>
-        <a href="#trends" class="nav-btn nb-tr">시장 동향</a>
-        <a href="light.html" class="nav-btn" style="background:#fff;color:#000;margin-left:4px;">☀ 라이트</a>
+<nav class="global-nav">
+    <div class="global-nav-inner">
+        <a href="/" class="nav-logo">Kletter</a>
+        <div class="nav-links">
+            <a href="/weekly" class="nav-link ">OTT</a>
+            <a href="/shortform" class="nav-link ">Shortform</a>
+            <a href="/subscribe" class="nav-link cta">구독</a>
+        </div>
     </div>
 </nav>
 
-<!-- HERO: 이번 주 1위 -->
-<div class="container">
-    <div class="hero">
-        <div class="hero-img" style="background-image:url('https://cdn.spotvnews.co.kr/news/photo/202603/801570_1305451_3141.jpg');"></div>
-        <div class="hero-body">
-            <div class="hero-badge">This Week #1</div>
-            <span class="hero-platform">NETFLIX</span>
-            <h2><a href="https://natalie.mu/eiga/news/666746" target="_blank">사냥개들 시즌2</a></h2>
-            <div class="hero-meta"><span class="tag tag-kr">K-콘텐츠</span> 4/3 공개 · 우도환, 이상이, 비(Rain) 주연</div>
-            <div class="hero-desc">불법 고리대금업자를 쓰러뜨린 건우와 우진이 이번엔 비(Rain)가 이끄는 불법 복싱 리그에 맞서 싸운다. 공개 2일 만에 Netflix Japan 1위 달성 후 유지 중.</div>
-        </div>
-    </div>
+
+<div class="hero-section">
+    <h1>일본 OTT & 숏폼 드라마<br>주간 트렌드 리포트</h1>
+    <p class="tagline">일본 주요 OTT와 숏폼 드라마 플랫폼의 화제 콘텐츠를 매주 분석합니다.</p>
 </div>
 
-<!-- 핵심 요약 -->
-<div class="container">
-    <div class="summary-section">
-        <h2>이번 주 핵심 요약</h2>
-        <ul class="summary-list">
-            <li>Netflix Japan에서 한국 드라마 <a href="https://natalie.mu/eiga/news/666746" target="_blank">'사냥개들 시즌2'</a>가 공개 직후 <strong>1위 달성</strong></li>
-            <li>Netflix 오리지널 일본 드라마 <a href="https://www.netflix.com/title/81581947" target="_blank">'구조의 대죄(九条の大罪)'</a>가 TV시리즈 부문 1위 유지 중</li>
-            <li>Amazon Prime Video에서 <a href="https://www.aboutamazon.com/news/entertainment/the-boys-eric-kripke-season-5-prime-video" target="_blank">'더 보이즈' 파이널 시즌</a> 공개로 글로벌 화제</li>
-            <li>Disney+에서 <a href="https://www.disneyplus.com/browse/entity-9ba0f41b-6173-4ff1-8967-71cad0620244" target="_blank">'스타워즈: 몰 - 쉐도우 로드'</a> 시리즈 공개 (4/6~)</li>
-            <li>4월 봄 시즌 <strong>신작 애니메이션 대거 공개</strong> (전 플랫폼 공통)</li>
-        </ul>
+<div class="wide-container">
+    <div class="section-header">
+        <h2>최신 리포트</h2>
     </div>
-</div>
 
-<!-- 에디터스 코멘트 -->
-<div class="container">
-    <div style="background:linear-gradient(135deg,var(--surface) 0%,var(--surface-light) 100%);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:12px;padding:24px 28px;margin:0 auto 8px;max-width:760px;">
-        <h2 style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:12px;">EDITOR'S NOTE</h2>
-        <p style="font-size:14px;color:#bbb;line-height:1.8;margin-bottom:10px;">이번 주는 한마디로 <strong style="color:var(--text);">"한국 콘텐츠의 주간"</strong>이었습니다. 사냥개들 시즌2가 공개 2일 만에 Netflix Japan 1위를 찍으면서, 한국 액션 드라마가 일본에서도 통한다는 걸 다시 한번 증명했어요. 비(Rain)의 빌런 연기가 일본 SNS에서 뜨거운 반응을 얻고 있는 것도 인상적입니다.</p>
-        <p style="font-size:14px;color:#bbb;line-height:1.8;margin-bottom:10px;">그런데 한 발 더 들어가보면, <strong style="color:var(--text);">시즌1은 이 정도 반응이 아니었어요.</strong> 2023년 시즌1 당시에는 일본 TOP10에 잠깐 머문 정도였거든요. 그 사이 2년 동안 일본 시청자들의 한국 액션 장르 수용도가 확실히 달라졌어요. 오징어게임, 마이네임, 수리남을 거치면서 "한국 드라마 = 로맨스"라는 고정관념이 깨지고, 액션·느와르 장르에서도 한국 콘텐츠를 기대하게 된 거죠. 사냥개들 시즌2의 1위는 이 흐름의 결과이자, 한국 제작사에게는 "일본향 액션"이라는 새로운 기획 방향을 열어주는 신호이기도 합니다.</p>
-        <p style="font-size:14px;color:#bbb;line-height:1.8;margin-bottom:10px;"><strong style="color:var(--text);">BEEF 시즌2</strong>는 또 다른 관점에서 흥미로워요. 윤여정, 송강호가 출연하지만 이건 "한국 드라마의 해외 수출"이 아니에요. 한국계 미국인 이성진이 만든 할리우드 작품에 한국 배우가 캐스팅된 거죠. K-콘텐츠가 수출의 시대를 넘어서, 글로벌 제작의 핵심 자원으로 쓰이기 시작했다는 의미예요. 한국 배우의 할리우드 출연이 한국 제작사에 기회인지, 아니면 인재 유출의 시작인지 — 이건 업계가 진지하게 고민해볼 주제입니다.</p>
-        <p style="font-size:14px;color:#bbb;line-height:1.8;">한편 애니메이션 팬이라면 이번 봄 시즌은 역대급이에요. 전슬라임 4기, Re:제로 4기, 교실의 엘리트 4기 — 인기 시리즈 속편이 한꺼번에 쏟아지고 있어서, 어떤 플랫폼을 구독할지 고민이 깊어지는 한 주입니다.</p>
+    <div class="report-grid">
+        <a href="/weekly/2026-W17" class="report-card">
+            <div class="card-label ott">OTT Weekly</div>
+            <h3>JAPAN Weekly OTT 트렌드 리포트</h3>
+            <div class="card-date">2026년 4월 3주차 (4/10 ~ 4/16)</div>
+            <div class="card-summary">사냥개들 시즌2 Netflix Japan 1위 달성, BEEF 시즌2 공개, 봄 애니메이션 시즌 개막</div>
+            <div class="card-arrow">읽기 &rarr;</div>
+        </a>
+        <a href="/shortform/2026-W17" class="report-card">
+            <div class="card-label shortform">Shortform</div>
+            <h3>일본 숏폼 드라마 OTT 위클리</h3>
+            <div class="card-date">2026년 4월 3주차 (4/14 ~ 4/20)</div>
+            <div class="card-summary">8개 숏폼 플랫폼의 화제 콘텐츠와 시장 동향을 한눈에.</div>
+            <div class="card-arrow">읽기 &rarr;</div>
+        </a>
     </div>
-</div>
 
-<!-- Netflix -->
-<div class="platform-section" id="netflix">
-    <div class="container">
-        <div class="platform-header">
-            <a href="https://www.netflix.com/browse" target="_blank" class="platform-badge badge-netflix">NETFLIX</a>
-            <h2>Netflix Japan</h2>
-        </div>
-        <table class="ranking-table">
-            <thead><tr><th>순위</th><th>작품명</th><th>장르</th><th>비고</th></tr></thead>
-            <tbody>
-                <tr><td><span class="rank-num">1</span></td><td><a href="https://www.netflix.com/title/81581947" target="_blank" style="color:var(--accent-blue);text-decoration:none;">구조의 대죄 (九条の大罪)</a></td><td>크라임 드라마</td><td>4/2 독점 공개</td></tr>
-                <tr><td><span class="rank-num">2</span></td><td><a href="https://www.ten-sura.com/anime/tensura" target="_blank" style="color:var(--accent-blue);text-decoration:none;">전생했더니 슬라임이었던 건에 대하여 시즌4</a></td><td>애니메이션</td><td>봄 시즌 신작</td></tr>
-                <tr><td><span class="rank-num">3</span></td><td><a href="https://yominotsugai.com/" target="_blank" style="color:var(--accent-blue);text-decoration:none;">황천의 쌍둥이 (黄泉のツガイ)</a></td><td>애니메이션</td><td>봄 시즌 신작</td></tr>
-            </tbody>
-        </table>
-        <div class="section-subtitle">주요 신작 & 예정작</div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://cdn.spotvnews.co.kr/news/photo/202603/801570_1305451_3141.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <span class="tag tag-top1">TOP 1</span> <a href="https://natalie.mu/eiga/news/666746" target="_blank">사냥개들 시즌2</a></div>
-                <div class="card-meta">4/3 공개 (지난주 공개 후 화제 지속) · 우도환, 이상이, 비(Rain) 주연</div>
-                <div class="card-desc"><strong>줄거리:</strong> 불법 고리대금업자를 쓰러뜨린 건우와 우진이 비(Rain)가 이끄는 불법 복싱 리그에 맞서 싸운다. 시즌1보다 스케일업된 액션이 화제.</div>
+    <div class="archive-toggle-wrap">
+        <span class="archive-toggle-btn" onclick="document.getElementById('pastReports').classList.toggle('open')">이전 리포트 보기 &#9662;</span>
+        <div class="archive-dropdown" id="pastReports">
+            <div class="report-grid" style="margin-top:12px;">
+                <a href="/weekly/2026-W16" class="report-card">
+                    <div class="card-label ott">OTT</div>
+                    <h3>W16 — 4월 2주차</h3>
+                    <div class="card-date">4/3 ~ 4/9</div>
+                    <div class="card-summary">구조의 대죄 Netflix 1위, 전슬라임 4기 봄 시즌 시작</div>
+                    <div class="card-arrow">읽기 &rarr;</div>
+                </a>
             </div>
         </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQfam2tkm-QtQYqbKc2HAfryNBC7E9FOMf7KtjvVueeTI-3buUAHInSG1SLsSi5mhergNu5wP2aAUWoO-CSS7U4VJjclN6CumXBhCrwo1MmtVm4ewO4DJTxrKPUKaldRqbqoH4T2jvzmzmslNIbwYtbQshTU.jpg?r=507');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-new">NEW</span> <span class="tag tag-kr">K-배우</span> <a href="https://eiga.com/news/20260405/9/" target="_blank">BEEF 시즌2</a></div>
-                <div class="card-meta">4/16 공개 · 오스카 아이작, 캐리 멀리건, 윤여정, 송강호</div>
-                <div class="card-desc"><strong>줄거리:</strong> 젊은 커플이 상사 부부의 격렬한 싸움을 목격하면서, 한국 대부호가 지배하는 컨트리클럽에서 치열한 심리 게임이 시작된다.</div>
+    </div>
+
+    <div class="about-section">
+        <h2>Kletter란?</h2>
+        <div class="about-grid">
+            <div class="about-item">
+                <h3>OTT Weekly</h3>
+                <p>Netflix, Prime Video, Disney+, Hulu, U-NEXT, TVer — 일본 6대 OTT 플랫폼의 주간 랭킹과 K-콘텐츠 분석</p>
             </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://img.cinematoday.jp/a/3TDmhXlH1kZu/_size_640x/_v_1757602476/main.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-upcoming">예정</span> <a href="https://about.netflix.com/ja/news/straight-to-hell-teaser" target="_blank">지옥에 떨어져라 (地獄に堕ちるわよ)</a></div>
-                <div class="card-meta">4/27 예정 · 토다 에리카 주연</div>
-                <div class="card-desc"><strong>줄거리:</strong> "지옥에 떨어져라!"라는 명대사로 일본을 뒤흔든 전설의 점술사 호소키 카즈코의 파란만장한 인생을 그린다.</div>
+            <div class="about-item">
+                <h3>Shortform</h3>
+                <p>BUMP, TateDora, ReelShort 등 일본 숏폼 드라마 8개 플랫폼의 트렌드와 화제작</p>
+            </div>
+            <div class="about-item">
+                <h3>에디터 인사이트</h3>
+                <p>단순 랭킹이 아닌, 한국 콘텐츠 업계 관점의 해석과 시장 분석</p>
+            </div>
+            <div class="about-item">
+                <h3>매주 금요일 발행</h3>
+                <p>매주 금요일 아침, 일본 OTT 시장에서 무슨 일이 있었는지 한눈에</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Amazon Prime Video -->
-<div class="platform-section" id="primevideo">
-    <div class="container">
-        <div class="platform-header">
-            <a href="https://www.amazon.co.jp/gp/video/storefront" target="_blank" class="platform-badge badge-amazon">PRIME VIDEO</a>
-            <h2>Amazon Prime Video Japan</h2>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://assets.aboutamazon.com/42/fe/d3acf2e4419c8969a8d8f2eed51f/the-boys-s5-humans.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://www.aboutamazon.com/news/entertainment/the-boys-eric-kripke-season-5-prime-video" target="_blank">더 보이즈 (The Boys) 파이널 시즌</a></div>
-                <div class="card-meta">4/8~ 매주 수요일 · Rotten Tomatoes 98%</div>
-                <div class="card-desc"><strong>줄거리:</strong> 홈랜더가 세상을 지배한 세계에서, 빌리 부처가 더 보이즈를 다시 모아 최종 대결에 나선다.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://assets.aboutamazon.com/dims4/default/59c4715/2147483647/strip/true/crop/800x510+0+0/resize/800x510!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F25%2F2a%2F8e9ce88144bbaed9311c9089dd55%2Fprime-video-girl-and-guard.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-upcoming">예정</span> <a href="https://www.aboutamazon.jp/news/entertainment/amazon-prime-video-new-content-april-2026" target="_blank">아가씨와 번견군 (お嬢と番犬くん)</a></div>
-                <div class="card-meta">4/24 공개 · 후쿠모토 리코 & Jesse(SixTONES) 주연</div>
-                <div class="card-desc"><strong>줄거리:</strong> 야쿠자 집안 손녀가 정체를 숨기고 평범한 고교생활을 하려 하지만, 조직의 젊은 리더가 '번견'을 자처한다.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://assets.aboutamazon.com/dims4/default/bf53698/2147483647/strip/true/crop/800x510+0+0/resize/800x510!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F57%2F5d%2Fe0626c1046fcbf7e36a2dd5cfc0f%2Fprime-video-dog-and-boy.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-upcoming">예정</span> <a href="https://www.aboutamazon.jp/news/entertainment/amazon-prime-video-new-content-april-2026" target="_blank">소년과 개 (少年と犬)</a></div>
-                <div class="card-meta">4/20 공개 · 나오키상 수상 소설 원작</div>
-                <div class="card-desc"><strong>줄거리:</strong> 소중한 사람을 찾아 서쪽으로 일본을 종단하는 한 마리 개와 상처받은 사람들의 이야기.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://amazon-blogs-brightspot.s3.amazonaws.com/9c/c1/bcf339944cff917ee07ad1be335f/prime-video-boxing-15キービジュアル.png');"></div>
-            <div class="card-body">
-                <div class="card-title"><a href="https://www.aboutamazon.jp/news/entertainment/amazon-prime-video-new-content-april-2026" target="_blank">Prime Video Boxing 15</a></div>
-                <div class="card-meta">나스카와 텐신 WBC 세계 밴텀급 타이틀전</div>
-                <div class="card-desc">료고쿠 국기관에서 생중계.</div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Disney+ -->
-<div class="platform-section" id="disneyplus">
-    <div class="container">
-        <div class="platform-header">
-            <a href="https://www.disneyplus.com/ja-jp" target="_blank" class="platform-badge badge-disney">DISNEY+</a>
-            <h2>Disney+ Japan</h2>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://d1uzk9o9cg136f.cloudfront.net/f/16782943/rc/2026/03/25/2cca0b54caa4627be94d2ccabd626bd2760a514b_xlarge.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://www.disneyplus.com/browse/entity-9ba0f41b-6173-4ff1-8967-71cad0620244" target="_blank">스타워즈: 몰 - 쉐도우 로드</a></div>
-                <div class="card-meta">4/6~ 매주 월요일, 전10화 · Rotten Tomatoes 100%</div>
-                <div class="card-desc"><strong>줄거리:</strong> 제국의 손이 닿지 않는 행성에서 범죄 조직을 재건하려는 몰이, 젊은 제다이 파다완과 만나 복수의 길을 걷는다.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://press.hulu.com/storage/uploads/4C/18/4C181ED7-B2F8-B778-89B1-CECAF28B1228/The_Testaments_S1_TA_P67_2000x3000-416x614.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://dramanavi.net/articles/321411" target="_blank">증언들 (The Testaments) — 핸드메이즈 테일 스핀오프</a></div>
-                <div class="card-meta">4/8~ 매주 수요일</div>
-                <div class="card-desc"><strong>줄거리:</strong> 여성의 자유가 박탈된 디스토피아 세계를 그린 '시녀 이야기'의 스핀오프. 새로운 시각에서 저항과 생존을 그린다.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://www.animatetimes.com/wp-content/uploads/2025/11/f9682a1cecb4770836677275816a76d7691944b900b939_01082870_95e193dd7398613d91b9f4a511f28b00704c9308.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://disneyplus.disney.co.jp/news/2026/04_recommend" target="_blank">교실의 엘리트 4기</a></div>
-                <div class="card-meta">4/4~ · 인기 라이트노벨 원작 애니메이션</div>
-                <div class="card-desc"><strong>줄거리:</strong> 실력만이 전부인 엘리트 학교에서, 숨겨진 천재 아야노코지가 치밀한 두뇌 싸움으로 학급을 최상위로 끌어올린다.</div>
-            </div>
-        </div>
-        <div class="section-subtitle">4월 하반기 예정</div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://d1uzk9o9cg136f.cloudfront.net/f/16782943/rc/2026/03/25/83893b54823fca2d2671be07b6530b1c8ff98264_xlarge.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <span class="tag tag-upcoming">예정</span> <a href="https://www.cinemacafe.net/article/2026/04/08/108494.html" target="_blank">유미의 세포들 시즌3</a></div>
-                <div class="card-meta">4/13~ 매주 월요일 2화씩 · 김고은, 김재원</div>
-                <div class="card-desc"><strong>줄거리:</strong> 인기 작가로 성장한 유미의 머릿속 세포들이, 새로운 인물의 등장으로 다시 한번 사랑의 스위치를 켠다.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://contents.oricon.co.jp/upimg/news/2448000/2447652/20260408_183313_p_l_59590557.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <span class="tag tag-upcoming">예정</span> <a href="https://www.oricon.co.jp/news/2447652/full/" target="_blank">골드랜드 (ゴールドランド)</a></div>
-                <div class="card-meta">4/29 예정, 전10화 · 박보영, 김희원</div>
-                <div class="card-desc"><strong>줄거리:</strong> 한적한 시골 출신의 히주가 밀수 조직의 금괴를 우연히 손에 넣으면서 긴박한 도주극에 휘말린다. 박보영 첫 다크 히로인.</div>
-            </div>
-        </div>
-    </div>
-</div>
+<footer class="site-footer">
+    <p>일본 OTT & 숏폼 드라마 시장의 K-콘텐츠 트렌드를 매주 분석합니다.</p>
+    <p class="adp-service-desc">일본 OTT 주간 트렌드 리포트 — kletter.watcha.io</p>
+</footer>
 
-<!-- Hulu -->
-<div class="platform-section" id="hulu">
-    <div class="container">
-        <div class="platform-header">
-            <a href="https://www.hulu.jp/" target="_blank" class="platform-badge" style="background:#1CE783;color:#000;">Hulu</a>
-            <h2>Hulu Japan</h2>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://dramanavi.net/wp-content/uploads/2026/02/OUTLANDER_S8-1.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://dramanavi.net/articles/320777" target="_blank">아웃랜더 시즌8 (파이널)</a></div>
-                <div class="card-meta">4/3~ · 다이애나 개벌던 베스트셀러 원작</div>
-                <div class="card-desc"><strong>줄거리:</strong> 18세기 스코틀랜드로 시간이동한 클레어와 제이미 부부의 판타지 로맨스 대작 최종 시즌.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://realsound.jp/wp-content/uploads/2026/03/20260319-getuya-01.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://www.oricon.co.jp/drama/618/" target="_blank">월야행로 (月夜行路) ―답은 명작 속에―</a></div>
-                <div class="card-meta">4/8~ 매주 수요일 · 하루, 아소 쿠미코 주연</div>
-                <div class="card-desc"><strong>줄거리:</strong> 문학을 사랑하는 바 주인과 갈 곳 잃은 주부가 여행을 떠나며, 명작 문학의 지식으로 사건의 진상에 다가간다.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://www.tvinsider.com/wp-content/uploads/2024/09/law-order-svu-season-26-poster-456x570.jpeg');"></div>
-            <div class="card-body">
-                <div class="card-title"><a href="https://dramanavi.net/articles/320777" target="_blank">LAW & ORDER: 성범죄 특수반 시즌26</a></div>
-                <div class="card-meta">4/8~ · 올리비아 벤슨 형사 주연</div>
-                <div class="card-desc"><strong>줄거리:</strong> 뉴욕을 무대로 충격적인 성범죄 사건을 수사하는 특수반의 이야기. 미국 최장수 범죄 수사 시리즈.</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- U-NEXT -->
-<div class="platform-section" id="unext">
-    <div class="container">
-        <div class="platform-header">
-            <a href="https://video.unext.jp/" target="_blank" class="platform-badge badge-unext">U-NEXT</a>
-            <h2>U-NEXT</h2>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2026/03/HEMrQlgbkAAakht.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-new">NEW</span> <a href="https://vod.app-liv.jp/archive/133798/" target="_blank">유포리아 (EUPHORIA) 시즌3</a></div>
-                <div class="card-meta">4/13~ U-NEXT 독점 배포</div>
-                <div class="card-desc"><strong>줄거리:</strong> 시즌2 이후 5년, 루(젠데이아)와 친구들이 성인이 되어가며 직면하는 새로운 현실과 갈등을 그린다.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://www.thefirsttimes.jp/admin/wp-content/uploads/5000/10/20241016-ty-101202.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><a href="https://video.unext.jp/ranking" target="_blank">그랑메종 도쿄 시리즈</a></div>
-                <div class="card-meta">키무라 타쿠야 주연 · 드라마 부문 상위 유지</div>
-                <div class="card-desc"><strong>줄거리:</strong> 파리에서 실패한 천재 셰프가 도쿄에서 미슐랭 3스타를 목표로 새로운 레스토랑에 도전한다.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://media.eiga.com/images/movie/100801/photo/4ea5d7812a221445.jpg');"></div>
-            <div class="card-body">
-                <div class="card-title"><a href="https://www.unext.co.jp/en/press-room/conan-coming-2026-03-21" target="_blank">명탐정 코난: 100만 달러의 오릉성</a></div>
-                <div class="card-meta">극장판 애니메이션 · U-NEXT 첫 배포</div>
-                <div class="card-desc"><strong>줄거리:</strong> 하코다테를 무대로 괴도 키드와 헤이지가 검에 숨겨진 보물의 비밀을 둘러싸고 대결한다.</div>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="card-poster" style="background-image:url('https://upload.wikimedia.org/wikipedia/en/6/6b/UFC_327_poster.jpeg');"></div>
-            <div class="card-body">
-                <div class="card-title"><a href="https://vod.app-liv.jp/archive/133798/" target="_blank">UFC 327</a></div>
-                <div class="card-meta">스포츠 라이브 콘텐츠</div>
-                <div class="card-desc">격투기 팬 대상 라이브 스트리밍. 프로하즈카 vs 울버그.</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- TVer -->
-<div class="platform-section" id="tver">
-    <div class="container">
-        <div class="platform-header">
-            <a href="https://tver.jp/" target="_blank" class="platform-badge" style="background:#0068B7;color:#fff;">TVer</a>
-            <h2>TVer (무료)</h2>
-        </div>
-        <p style="font-size:13px;color:var(--text-muted);margin:-10px 0 18px;">일본 민방 5사 공동 무료 스트리밍 · 월간 4,120만 유저 · 광고 기반</p>
-
-        <div class="section-subtitle">이번 주 재생수 TOP 5 (4/6~4/12)</div>
-        <table class="ranking-table">
-            <thead><tr><th>순위</th><th>작품명</th><th>포인트</th><th>비고</th></tr></thead>
-            <tbody>
-                <tr><td><span class="rank-num">1</span></td><td><a href="https://tver.jp/rankings/episode/drama" target="_blank" style="color:var(--accent-blue);text-decoration:none;">사레타가와의 복수 ~동맹을 맺은 아내들~</a></td><td>3,708</td><td>TV도쿄 · 복수 드라마</td></tr>
-                <tr><td><span class="rank-num">2</span></td><td>네가 사형이 되기 전에 (君が死刑になる前に)</td><td>3,558</td><td>타임슬립 스릴러</td></tr>
-                <tr><td><span class="rank-num">3</span></td><td>아이를 낳지 않는 여자는 안 되나요? (DINKs)</td><td>3,534</td><td>사회파 드라마</td></tr>
-                <tr><td><span class="rank-num">4</span></td><td>터미네이터와 사랑에 빠지면 (ターミネーターと恋しちゃったら)</td><td>3,471</td><td>SF 로맨틱 코미디</td></tr>
-                <tr><td><span class="rank-num">5</span></td><td>귀녀가 사는 집 (鬼女の棲む家)</td><td>3,387</td><td>인터넷 복수극 스릴러</td></tr>
-            </tbody>
-        </table>
-
-        <div class="section-subtitle">K-콘텐츠 on TVer</div>
-        <div class="content-card no-poster">
-            <div class="card-body">
-                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <a href="https://tver.jp/" target="_blank">한국 드라마 무료 배포 확대 중</a></div>
-                <div class="card-meta">BS10 지상파 방송분 + TVer 다시보기</div>
-                <div class="card-desc">TVer가 2026년 봄부터 BS10 한국 드라마의 다시보기 배포를 시작. 유료 OTT가 아닌 무료 플랫폼에서 한국 드라마를 접하는 일본 시청자층이 늘어나고 있는 추세. K-콘텐츠의 일본 내 접근성이 한 단계 더 넓어진 셈.</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- 한국 콘텐츠 스포트라이트 -->
-<div class="spotlight-wrap" id="k-spotlight">
-    <div class="spotlight-section">
-        <div class="container">
-            <h2>한국 콘텐츠 스포트라이트</h2>
-            <p>이번 주 일본 OTT 시장에서 한국 콘텐츠의 존재감이 특히 두드러졌습니다.</p>
-
-            <div class="spotlight-card">
-                <div class="spotlight-poster" style="background-image:url('https://cdn.spotvnews.co.kr/news/photo/202603/801570_1305451_3141.jpg');"></div>
-                <div class="spotlight-body">
-                    <h3><a href="https://natalie.mu/eiga/news/666746" target="_blank">사냥개들 시즌2</a> <span class="tag tag-top1">1위</span></h3>
-                    <div class="platform-label">Netflix · 4/3 공개</div>
-                    <dl>
-                        <dt>출연</dt><dd>우도환, 이상이, 비(Rain)</dd>
-                        <dt>성과</dt><dd><a href="https://ja.laodong.vn/giai-tri/bi-rain-gop-mat-phim-bloodhounds-2-giu-top-1-netflix-7-ngay-1684166.ldo" target="_blank">Netflix Japan 1위 달성</a>. 시즌1 대비 스케일업된 액션·스토리 호평</dd>
-                        <dt>포인트</dt><dd>비(Rain)의 빌런 캐스팅이 일본 내 SNS에서 화제. 한국 액션 장르의 경쟁력 재입증</dd>
-                    </dl>
-                </div>
-            </div>
-
-            <div class="spotlight-card">
-                <div class="spotlight-poster" style="background-image:url('https://d1uzk9o9cg136f.cloudfront.net/f/16782943/rc/2026/03/25/83893b54823fca2d2671be07b6530b1c8ff98264_xlarge.jpg');"></div>
-                <div class="spotlight-body">
-                    <h3><a href="https://www.cinemacafe.net/article/2026/04/08/108494.html" target="_blank">유미의 세포들 시즌3</a></h3>
-                    <div class="platform-label">Disney+ · 4/13 공개</div>
-                    <dl>
-                        <dt>출연</dt><dd>김고은, 김재원 (신규 캐스팅)</dd>
-                        <dt>특징</dt><dd>실사 + 3D 애니메이션 결합. 네이버 웹툰 원작. 3년 만의 신작</dd>
-                        <dt>포인트</dt><dd>일본 내 웹툰 원작 콘텐츠 관심 증가 추세와 맞물려 주목</dd>
-                    </dl>
-                </div>
-            </div>
-
-            <div class="spotlight-card">
-                <div class="spotlight-poster" style="background-image:url('https://contents.oricon.co.jp/upimg/news/2448000/2447652/20260408_183313_p_l_59590557.jpg');"></div>
-                <div class="spotlight-body">
-                    <h3><a href="https://www.oricon.co.jp/news/2447652/full/" target="_blank">골드랜드 (ゴールドランド)</a></h3>
-                    <div class="platform-label">Disney+ · 4/29 예정</div>
-                    <dl>
-                        <dt>출연</dt><dd>박보영, 김희원</dd>
-                        <dt>특징</dt><dd>'올드보이' 각본가 황조윤의 스트리밍 첫 작품. 밀수 조직 금괴를 둘러싼 도주극</dd>
-                        <dt>포인트</dt><dd>박보영의 첫 다크 히로인 역할. 일본 내 인지도 활용 가능성 높음</dd>
-                    </dl>
-                </div>
-            </div>
-
-            <div class="spotlight-card">
-                <div class="spotlight-poster" style="background-image:url('https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQfam2tkm-QtQYqbKc2HAfryNBC7E9FOMf7KtjvVueeTI-3buUAHInSG1SLsSi5mhergNu5wP2aAUWoO-CSS7U4VJjclN6CumXBhCrwo1MmtVm4ewO4DJTxrKPUKaldRqbqoH4T2jvzmzmslNIbwYtbQshTU.jpg?r=507');"></div>
-                <div class="spotlight-body">
-                    <h3><a href="https://eiga.com/news/20260405/9/" target="_blank">BEEF 시즌2</a></h3>
-                    <div class="platform-label">Netflix · 4/16 공개</div>
-                    <dl>
-                        <dt>출연</dt><dd>오스카 아이작, 캐리 멀리건, <strong>윤여정, 송강호</strong></dd>
-                        <dt>특징</dt><dd>한국계 미국인 이성진 크리에이터의 다크 코미디. 한국 대부호 컨트리클럽 배경</dd>
-                        <dt>포인트</dt><dd>윤여정·송강호의 할리우드 주류 작품 참여로 K-콘텐츠 영향력 확인</dd>
-                    </dl>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!-- 시장 동향 -->
-<div class="trends-section" id="trends">
-    <div class="container">
-        <h2>시장 동향 메모</h2>
-        <div class="trend-item">
-            <div class="trend-num">1</div>
-            <div><h3>봄 애니메이션 시즌 개막 — 플랫폼 간 독점 경쟁 본격화</h3><p>전슬라임 4기, Re:제로 4기, 교실의 엘리트 4기 등 인기 시리즈 속편이 대거 공개. dAnimeStore 60작품+, ABEMA·Hulu 각 55작품+ 편성으로 전 플랫폼이 애니메이션 콘텐츠에 집중하고 있음. Amazon Prime Video는 '북두의 권 리메이크', '이세계 느긋한 농가 2기'를 독점 확보하며, 독점 타이틀 확보가 플랫폼 차별화의 핵심 전략이 되는 추세. <a href="https://gamebiz.jp/news/423558" target="_blank" style="color:var(--accent-blue);font-size:12px;">[출처]</a></p></div>
-        </div>
-        <div class="trend-item">
-            <div class="trend-num">2</div>
-            <div><h3>한국 콘텐츠, Netflix Japan 내 영향력 재확인</h3><p>사냥개들 시즌2가 공개 2일 만에 1위를 달성하며, Netflix Japan에서 한국 드라마의 파급력을 다시 입증. Netflix는 2026년 한국 오리지널 33편을 예고한 상태로, 공유·송예진·박은빈·지수(BLACKPINK) 등 톱스타 신작이 연내 대거 공개 예정. Disney+에서도 유미의 세포들 시즌3, 골드랜드 등 한국 콘텐츠 투자를 지속하며, 일본 시장에서의 K-콘텐츠 수요는 구조적으로 성장 중. <a href="https://ja.laodong.vn/giai-tri/bi-rain-gop-mat-phim-bloodhounds-2-giu-top-1-netflix-7-ngay-1684166.ldo" target="_blank" style="color:var(--accent-blue);font-size:12px;">[사냥개들 1위]</a> <a href="https://hollywoodreporter.jp/tv/171421/" target="_blank" style="color:var(--accent-blue);font-size:12px;">[Netflix 2026 한국작품]</a></p></div>
-        </div>
-        <div class="trend-item">
-            <div class="trend-num">3</div>
-            <div><h3>스포츠 라이브 — OTT의 새로운 성장 축</h3><p>Amazon Prime Video는 복싱(나스카와 텐신 타이틀전)에 더해 MLB 중계를 전년 54경기→350경기+로 대폭 확대하며 스포츠 라이브를 핵심 전략으로 삼고 있음. U-NEXT는 UFC 독점 중계로 격투기 팬층을 공략 중. 라이브 스포츠는 실시간 시청률이 높아 광고 수익에 직결되기 때문에, 각 플랫폼이 스포츠 중계권 확보에 적극적으로 투자하는 흐름. <a href="https://www.aboutamazon.jp/news/entertainment/prime-video-spotv-expands-2026-mlb-coverage" target="_blank" style="color:var(--accent-blue);font-size:12px;">[MLB 확대]</a> <a href="https://press.aboutamazon.com/jp/2026/3/prime-video-boxing-15" target="_blank" style="color:var(--accent-blue);font-size:12px;">[Boxing 15]</a></p></div>
-        </div>
-        <div class="trend-item">
-            <div class="trend-num">4</div>
-            <div><h3>일본 동영상 배포 시장 1조엔 돌파, 성장 지속</h3><p>일본 OTT 시장은 2024년 1조 700억엔, 2025년 1조 1,910억엔으로 성장했으며 2026년에도 확대 추세. 특히 커넥티드 TV(스마트TV로 OTT 시청) 보급이 가속화되면서, TV 화면 통한 OTT 시청 비중이 53.6%까지 상승. OTT 광고 시장도 급성장 중으로, 일본 마케터의 46%가 향후 1년 내 OTT 광고를 시작하거나 확대할 예정이라고 응답. <a href="https://mvsk.jp/column/190139" target="_blank" style="color:var(--accent-blue);font-size:12px;">[시장 규모]</a> <a href="https://manamina.valuesccg.com/articles/4551" target="_blank" style="color:var(--accent-blue);font-size:12px;">[OTT 광고]</a></p></div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<div class="footer">
-    <div class="container">
-        <p>본 리포트는 각 플랫폼 공식 발표, 일본 미디어 보도, SNS 화제성을 기반으로 작성되었습니다.</p>
-        <div class="next-issue">다음 호 발행 예정: 2026년 4월 4주차 (4/17 ~ 4/23)</div>
-        <a href="subscribe.html" style="display:inline-block;margin-top:18px;padding:12px 32px;background:#FF0558;color:#fff;font-size:14px;font-weight:700;border-radius:8px;text-decoration:none;">뉴스레터 구독하기</a>
-        <p style="margin-top:20px;font-size:12px;color:#555;">Kletter &copy; 2026</p>
-    </div>
-</div>
 
 </body>
 </html>

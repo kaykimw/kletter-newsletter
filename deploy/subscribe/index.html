@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구독하기 — Kletter</title>
+    <meta name="description" content="일본 OTT & 숏폼 드라마 주간 트렌드 리포트">
+    <meta name="adp-app-name" content="kletter">
+    <meta name="adp-owner" content="kay">
+    <style>
+        :root {
+            --primary: #FF0558;
+            --primary-dark: #D90048;
+            --bg: #0A0A0B;
+            --surface: #151518;
+            --surface-light: #1E1E22;
+            --text: #F0F0F0;
+            --text-muted: #888;
+            --border: #2A2A2E;
+            --accent-blue: #4DA8FF;
+            --accent-green: #34D399;
+            --accent-yellow: #FBBF24;
+            --accent-purple: #A78BFA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== GLOBAL NAV ===== */
+        .global-nav {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(10,10,11,0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 20px;
+        }
+        .global-nav-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .nav-link {
+            padding: 7px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .nav-link:hover { color: var(--text); background: var(--surface-light); }
+        .nav-link.active { color: var(--text); background: var(--surface); }
+        .nav-link.cta {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+        }
+        .nav-link.cta:hover { opacity: 0.9; }
+
+        .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+        .wide-container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+        .site-footer p { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+        .adp-service-desc { margin-top: 12px; font-size: 12px; color: #555; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .nav-link { padding: 6px 10px; font-size: 12px; }
+            .global-nav-inner { height: 48px; }
+        }
+
+        
+.subscribe-wrap {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.subscribe-box {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+}
+.subscribe-box h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+.subscribe-box .desc {
+    font-size: 15px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+.form-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+.form-group input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.form-group input:focus { border-color: var(--primary); }
+.form-group input::placeholder { color: #555; }
+.form-group button {
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+.form-group button:hover { opacity: 0.9; }
+.form-group button:disabled { opacity: 0.5; cursor: not-allowed; }
+.message { font-size: 14px; margin-top: 8px; min-height: 20px; }
+.message.success { color: var(--accent-green); }
+.message.error { color: var(--primary); }
+.features {
+    margin-top: 40px;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+}
+.features h3 { font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+.features ul { list-style: none; }
+.features li { padding: 8px 0; font-size: 14px; color: #bbb; border-bottom: 1px solid var(--border); }
+.features li:last-child { border-bottom: none; }
+.features li strong { color: var(--text); }
+
+@media (max-width: 500px) {
+    .form-group { flex-direction: column; }
+    .subscribe-box h1 { font-size: 24px; }
+}
+
+    </style>
+</head>
+<body>
+
+<nav class="global-nav">
+    <div class="global-nav-inner">
+        <a href="/" class="nav-logo">Kletter</a>
+        <div class="nav-links">
+            <a href="/weekly" class="nav-link ">OTT</a>
+            <a href="/shortform" class="nav-link ">Shortform</a>
+            <a href="/subscribe" class="nav-link cta">구독</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="subscribe-wrap">
+    <div class="subscribe-box">
+        <h1>한국 콘텐츠는 일본에서<br>어떻게 소비되고 있는가</h1>
+        <p class="desc">매주 금요일, 일본 OTT 6개 플랫폼의 화제 콘텐츠와<br>K-콘텐츠의 현지 반응을 분석해서 보내드립니다.</p>
+
+        <div class="form-group">
+            <input type="email" id="email" placeholder="이메일 주소를 입력하세요" required>
+            <button id="subscribeBtn" onclick="subscribe()">구독하기</button>
+        </div>
+        <div class="message" id="message"></div>
+
+        <div class="features">
+            <h3>매주 받아보는 내용</h3>
+            <ul>
+                <li><strong>일본 OTT 랭킹 & 화제작</strong> — Netflix, Prime Video, Disney+, Hulu, U-NEXT, TVer</li>
+                <li><strong>숏폼 드라마 트렌드</strong> — BUMP, TateDra, ReelShort 등 9개 플랫폼</li>
+                <li><strong>K-콘텐츠 현지 분석</strong> — 일본에서 한국 콘텐츠가 어떤 반응을 얻고 있는지</li>
+                <li><strong>에디터 인사이트</strong> — 한국 콘텐츠 업계 관점의 해석</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<footer class="site-footer">
+    <p>일본 OTT & 숏폼 드라마 시장의 K-콘텐츠 트렌드를 매주 분석합니다.</p>
+    <p class="adp-service-desc">일본 OTT 주간 트렌드 리포트 — kletter.watcha.io</p>
+</footer>
+
+
+<script>
+async function subscribe() {
+    const email = document.getElementById('email').value.trim();
+    const btn = document.getElementById('subscribeBtn');
+    const msg = document.getElementById('message');
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        msg.className = 'message error';
+        msg.textContent = '올바른 이메일 주소를 입력해주세요.';
+        return;
+    }
+    btn.disabled = true; btn.textContent = '처리 중...'; msg.textContent = '';
+    try {
+        const res = await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) });
+        const data = await res.json();
+        if (res.ok) { msg.className = 'message success'; msg.textContent = '구독 완료! 매주 금요일 뉴스레터를 보내드릴게요.'; document.getElementById('email').value = ''; }
+        else { msg.className = 'message error'; msg.textContent = data.error || '오류가 발생했습니다.'; }
+    } catch (e) { msg.className = 'message error'; msg.textContent = '네트워크 오류가 발생했습니다.'; }
+    btn.disabled = false; btn.textContent = '구독하기';
+}
+</script>
+
+</body>
+</html>
