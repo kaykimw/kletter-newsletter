@@ -143,31 +143,53 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 28px;
     text-decoration: none;
     color: var(--text);
     transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    overflow: hidden;
+    min-height: 240px;
 }
 .report-card:hover {
     border-color: var(--primary);
-    box-shadow: 0 4px 20px rgba(255,5,88,0.1);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(255,5,88,0.18);
+    transform: translateY(-3px);
+}
+.report-card.shortform-card:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 8px 32px rgba(167,139,250,0.18);
+}
+.report-card .card-poster {
+    position: relative;
+    width: 160px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--surface-light);
+}
+.report-card .card-content {
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
 }
 .report-card .card-label {
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
 }
 .report-card .card-label.ott { color: var(--primary); }
 .report-card .card-label.shortform { color: var(--accent-purple); }
-.report-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
-.report-card .card-date { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
-.report-card .card-summary { font-size: 13px; color: #aaa; line-height: 1.7; flex: 1; }
-.report-card .card-arrow { font-size: 13px; color: var(--accent-blue); margin-top: 16px; font-weight: 600; }
+.report-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; line-height: 1.4; letter-spacing: -0.3px; }
+.report-card .card-date { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; font-weight: 500; }
+.report-card .card-summary { font-size: 13px; color: #b0b0b0; line-height: 1.7; flex: 1; }
+.report-card .card-arrow { font-size: 13px; color: var(--accent-blue); margin-top: 18px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: gap 0.2s; }
+.report-card:hover .card-arrow { gap: 8px; }
 
 .about-section {
     background: var(--surface);
@@ -210,6 +232,9 @@
     .hero-section h1 { font-size: 20px; }
     .report-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
+    .report-card { flex-direction: column; min-height: 0; }
+    .report-card .card-poster { width: 100%; aspect-ratio: 16 / 9; }
+    .report-card .card-content { padding: 22px 24px 24px; }
 }
 
     </style>
@@ -240,18 +265,24 @@
 
     <div class="report-grid">
         <a href="/weekly/2026-W17" class="report-card">
-            <div class="card-label ott">OTT Weekly</div>
-            <h3>JAPAN Weekly OTT 트렌드 리포트</h3>
-            <div class="card-date">2026년 4월 3주차 (4/10 ~ 4/16)</div>
-            <div class="card-summary">사냥개들 시즌2 Netflix Japan 1위 달성, BEEF 시즌2 공개, 봄 애니메이션 시즌 개막</div>
-            <div class="card-arrow">읽기 &rarr;</div>
+            <div class="card-poster" style="background-image:url('https://cdn.dailybizon.com/news/photo/202603/64775_68580_4259.jpg');"></div>
+            <div class="card-content">
+                <div class="card-label ott">OTT Weekly</div>
+                <h3>JAPAN Weekly OTT 트렌드 리포트</h3>
+                <div class="card-date">2026년 4월 4주차 (4/17 ~ 4/23)</div>
+                <div class="card-summary">"오늘도 완판했습니다" 공개 직후 Net Japan #3 진입 · 구조의 대죄 4주 연속 1위 · BEEF S2 평가 우호 vs 시청수 S1 대비 58%↓</div>
+                <div class="card-arrow">읽기 <span>&rarr;</span></div>
+            </div>
         </a>
-        <a href="/shortform/2026-W17" class="report-card">
-            <div class="card-label shortform">Shortform</div>
-            <h3>일본 숏폼 드라마 OTT 위클리</h3>
-            <div class="card-date">2026년 4월 3주차 (4/14 ~ 4/20)</div>
-            <div class="card-summary">8개 숏폼 플랫폼의 화제 콘텐츠와 시장 동향을 한눈에.</div>
-            <div class="card-arrow">읽기 &rarr;</div>
+        <a href="/shortform/2026-W17" class="report-card shortform-card">
+            <div class="card-poster" style="background-image:url('https://tated.tv/wp-content/uploads/2026/04/kv_okamote_vertical-scaled.jpg');background-position:center 22%;"></div>
+            <div class="card-content">
+                <div class="card-label shortform">Shortform</div>
+                <h3>일본 숏폼 드라마 OTT 위클리</h3>
+                <div class="card-date">2026년 4월 4주차 (4/17 ~ 4/23)</div>
+                <div class="card-summary">BUMP "3000만 벌어라" 1주만에 SNS 3,000만 재생 · TateDora 신작 SNS 5,000만 인프레션 · 일본 숏드라마 시장 1,530억엔 전망</div>
+                <div class="card-arrow">읽기 <span>&rarr;</span></div>
+            </div>
         </a>
     </div>
 
@@ -260,11 +291,13 @@
         <div class="archive-dropdown" id="pastReports">
             <div class="report-grid" style="margin-top:12px;">
                 <a href="/weekly/2026-W16" class="report-card">
-                    <div class="card-label ott">OTT</div>
-                    <h3>W16 — 4월 2주차</h3>
-                    <div class="card-date">4/3 ~ 4/9</div>
-                    <div class="card-summary">구조의 대죄 Netflix 1위, 전슬라임 4기 봄 시즌 시작</div>
-                    <div class="card-arrow">읽기 &rarr;</div>
+                    <div class="card-content">
+                        <div class="card-label ott">OTT</div>
+                        <h3>W16 — 4월 3주차</h3>
+                        <div class="card-date">4/10 ~ 4/16</div>
+                        <div class="card-summary">구조의 대죄 Netflix 1위, 전슬라임 4기 봄 시즌 시작</div>
+                        <div class="card-arrow">읽기 <span>&rarr;</span></div>
+                    </div>
                 </a>
             </div>
         </div>
