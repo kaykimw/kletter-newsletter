@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAPAN Weekly OTT 트렌드 리포트 — 2026년 5월 1주차</title>
+    <meta name="description" content="일본 OTT 6개 플랫폼 K-콘텐츠 주간 트렌드 리포트">
+    <meta name="adp-app-name" content="kletter">
+    <meta name="adp-owner" content="kay">
+    <style>
+        :root {
+            --primary: #FF0558;
+            --primary-dark: #D90048;
+            --bg: #0A0A0B;
+            --surface: #151518;
+            --surface-light: #1E1E22;
+            --text: #F0F0F0;
+            --text-muted: #888;
+            --border: #2A2A2E;
+            --accent-blue: #4DA8FF;
+            --accent-green: #34D399;
+            --accent-yellow: #FBBF24;
+            --accent-purple: #A78BFA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: auto; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, #8B0033 70%, #3D0015 100%);
+            padding: 40px 24px 28px;
+            text-align: center;
+        }
+        .header h1 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 4px; letter-spacing: -0.5px; }
+        .header .date { font-size: 14px; color: rgba(255,255,255,0.65); }
+
+        /* ===== STICKY NAV ===== */
+        .platform-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10,10,11,0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 0;
+            overflow-x: auto;
+        }
+        .platform-nav .nav-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            display: flex;
+            gap: 8px;
+            padding: 0 20px;
+            justify-content: center;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: transform 0.15s, opacity 0.15s;
+        }
+        .nav-btn:hover { transform: scale(1.05); opacity: 0.9; }
+        .nav-btn.nb-nf { background: #E50914; }
+        .nav-btn.nb-ap { background: #00A8E1; }
+        .nav-btn.nb-dp { background: #113CCF; }
+        .nav-btn.nb-hu { background: #1CE783; color: #000; }
+        .nav-btn.nb-un { background: #00C8AD; }
+        .nav-btn.nb-kr { background: var(--accent-purple); }
+        .nav-btn.nb-tr { background: var(--accent-green); color: #000; }
+
+        .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            max-width: 760px;
+            margin: 28px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--surface);
+            display: flex;
+            min-height: 280px;
+        }
+        .hero-img {
+            width: 220px;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-body {
+            padding: 32px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--accent-yellow);
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero h2 { font-size: 24px; font-weight: 800; margin-bottom: 6px; line-height: 1.3; }
+        .hero h2 a { color: var(--text); text-decoration: none; }
+        .hero h2 a:hover { color: var(--primary); }
+        .hero .hero-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+        .hero .hero-desc { font-size: 14px; color: #bbb; line-height: 1.7; }
+        .hero .hero-platform { display: inline-block; background: #E50914; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; margin-bottom: 10px; }
+
+        /* ===== SUMMARY ===== */
+        .summary-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px 32px;
+            margin: 28px auto;
+            max-width: 760px;
+        }
+        .summary-section h2 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .summary-list { list-style: none; }
+        .summary-list li { padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.6; }
+        .summary-list li:last-child { border-bottom: none; }
+        .summary-list li a { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
+        .summary-list li a:hover { text-decoration: underline; }
+
+        /* ===== PLATFORM SECTION ===== */
+        .platform-section { padding: 40px 0 8px; scroll-margin-top: 60px; }
+        .spotlight-wrap { scroll-margin-top: 60px; }
+        .trends-section { scroll-margin-top: 60px; }
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 22px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--border);
+        }
+        .platform-badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+        .platform-badge:hover { opacity: 0.85; }
+        .badge-netflix { background: #E50914; }
+        .badge-amazon { background: #00A8E1; }
+        .badge-disney { background: #113CCF; }
+        .badge-unext { background: #00C8AD; }
+        .platform-header h2 { font-size: 20px; font-weight: 700; }
+
+        /* ===== RANKING TABLE ===== */
+        .ranking-table { width: 100%; border-collapse: collapse; margin-bottom: 26px; font-size: 14px; }
+        .ranking-table thead th { background: var(--surface-light); padding: 10px 14px; text-align: left; font-weight: 600; color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .ranking-table tbody td { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+        .ranking-table tbody tr:hover { background: var(--surface-light); }
+        .rank-num { font-weight: 800; font-size: 16px; color: var(--primary); }
+
+        /* ===== CONTENT CARD ===== */
+        .content-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 14px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            display: flex;
+            overflow: hidden;
+        }
+        .content-card:hover { border-color: var(--primary); box-shadow: 0 0 20px rgba(255,5,88,0.08); }
+        .card-poster { width: 140px; height: 190px; flex-shrink: 0; background-size: cover; background-position: center; background-color: var(--surface-light); }
+        .card-body { padding: 20px 22px; flex: 1; min-width: 0; }
+        .card-body .card-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .card-body .card-title a { color: var(--text); text-decoration: none; }
+        .card-body .card-title a:hover { color: var(--primary); }
+        .card-body .card-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+        .card-body .card-desc { font-size: 13px; color: #aaa; line-height: 1.65; }
+
+        .content-card.no-poster { display: block; }
+        .content-card.no-poster .card-body { padding: 20px 22px; }
+
+        /* ===== TAGS ===== */
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-right: 4px; letter-spacing: 0.3px; }
+        .tag-new { background: var(--primary); color: #fff; }
+        .tag-top1 { background: var(--accent-yellow); color: #000; }
+        .tag-kr { background: var(--accent-purple); color: #fff; }
+        .tag-upcoming { background: var(--surface-light); color: var(--text-muted); border: 1px solid var(--border); }
+
+        .section-subtitle { font-size: 14px; margin: 22px 0 14px; color: var(--text-muted); font-weight: 600; }
+
+        /* ===== SPOTLIGHT (K-Content) ===== */
+        .spotlight-wrap {
+            background: linear-gradient(180deg, rgba(167,139,250,0.08) 0%, rgba(167,139,250,0.02) 100%);
+            border-top: 2px solid var(--accent-purple);
+            border-bottom: 2px solid var(--accent-purple);
+            padding: 44px 0;
+            margin: 44px 0;
+        }
+        .spotlight-section { max-width: 760px; margin: 0 auto; }
+        .spotlight-section > h2 { font-size: 22px; font-weight: 800; margin-bottom: 6px; color: var(--accent-purple); }
+        .spotlight-section > p { font-size: 14px; color: var(--text-muted); margin-bottom: 26px; }
+        .spotlight-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 14px;
+            border-left: 4px solid var(--accent-purple);
+            display: flex;
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .spotlight-card:hover { box-shadow: 0 0 24px rgba(167,139,250,0.1); }
+        .spotlight-poster { width: 140px; height: 190px; flex-shrink: 0; background-size: cover; background-position: center; background-color: var(--surface-light); }
+        .spotlight-body { padding: 22px 26px; flex: 1; min-width: 0; }
+        .spotlight-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+        .spotlight-body h3 a { color: var(--text); text-decoration: none; }
+        .spotlight-body h3 a:hover { color: var(--accent-purple); }
+        .spotlight-body .platform-label { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+        .spotlight-body dl { display: grid; grid-template-columns: 60px 1fr; gap: 6px 12px; font-size: 13px; }
+        .spotlight-body dt { font-weight: 600; color: var(--text-muted); }
+        .spotlight-body dd { color: #bbb; }
+        .spotlight-body dd a { color: var(--accent-blue); text-decoration: none; }
+        .spotlight-body dd a:hover { text-decoration: underline; }
+
+        /* ===== TRENDS ===== */
+        .trends-section { margin: 44px auto; max-width: 760px; }
+        .trends-section h2 { font-size: 20px; font-weight: 800; margin-bottom: 20px; color: var(--accent-green); }
+        .trend-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+        .trend-item:last-child { border-bottom: none; }
+        .trend-num { font-size: 22px; font-weight: 800; color: var(--accent-green); min-width: 30px; }
+        .trend-item h3 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+        .trend-item p { font-size: 13px; color: #888; line-height: 1.6; }
+
+        /* ===== FOOTER ===== */
+        .footer { text-align: center; padding: 36px 20px; border-top: 1px solid var(--border); margin-top: 44px; }
+        .footer p { font-size: 13px; color: var(--text-muted); line-height: 1.8; }
+        .footer .next-issue { display: inline-block; margin-top: 14px; padding: 10px 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text); font-weight: 600; }
+
+        /* ===== ARCHIVE DROPDOWN ===== */
+        .archive-wrap { margin-top: 20px; }
+        .archive-toggle { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 20px; font-size: 13px; color: var(--text); font-weight: 600; cursor: pointer; display: inline-block; transition: border-color 0.2s; }
+        .archive-toggle:hover { border-color: var(--primary); }
+        .archive-list { display: none; margin-top: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; text-align: left; max-width: 320px; margin-left: auto; margin-right: auto; }
+        .archive-list.open { display: block; }
+        .archive-list a { display: block; padding: 8px 0; font-size: 13px; color: var(--accent-blue); text-decoration: none; border-bottom: 1px solid var(--border); }
+        .archive-list a:last-child { border-bottom: none; }
+        .archive-list a:hover { color: var(--primary); }
+        .archive-list .archive-date { color: var(--text-muted); font-size: 11px; margin-left: 8px; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .header h1 { font-size: 20px; }
+            .hero { flex-direction: column; min-height: auto; }
+            .hero-img { width: 100%; height: 200px; }
+            .hero-body { padding: 22px; }
+            .hero h2 { font-size: 20px; }
+            .summary-section { padding: 20px; }
+            .card-poster { width: 100px; height: 140px; }
+            .card-body { padding: 14px; }
+            .spotlight-poster { width: 100px; height: 140px; }
+            .spotlight-body { padding: 14px; }
+            .spotlight-body dl { grid-template-columns: 1fr; }
+            .spotlight-body dt { margin-top: 4px; }
+            .ranking-table { font-size: 12px; }
+            .ranking-table thead th, .ranking-table tbody td { padding: 8px 10px; }
+            .nav-btn { font-size: 11px; padding: 5px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav style="position:sticky;top:0;z-index:200;background:rgba(10,10,11,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #2A2A2E;padding:0 20px;">
+  <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;">
+    <a href="/" style="font-size:18px;font-weight:800;color:#FF0558;text-decoration:none;letter-spacing:-0.5px;">Kletter</a>
+    <div style="display:flex;gap:6px;align-items:center;">
+      <a href="/weekly" style="padding:7px 16px;border-radius:8px;font-size:13px;font-weight:600;color:#F0F0F0;background:#151518;text-decoration:none;">OTT</a>
+      <a href="/shortform" style="padding:7px 16px;border-radius:8px;font-size:13px;font-weight:600;color:#888;text-decoration:none;">Shortform</a>
+      <a href="/subscribe" style="padding:7px 16px;border-radius:8px;font-size:13px;font-weight:700;color:#fff;background:#FF0558;text-decoration:none;">구독</a>
+    </div>
+  </div>
+</nav>
+<style>.platform-nav{top:56px !important;}.header{padding-top:20px !important;}</style>
+
+<div class="header">
+    <h1>JAPAN Weekly OTT 트렌드 리포트</h1>
+    <div class="date">2026년 5월 1주차 (5/1 ~ 5/7)</div>
+</div>
+
+<!-- Sticky Nav -->
+<nav class="platform-nav">
+    <div class="nav-inner">
+        <a href="#netflix" class="nav-btn nb-nf">Netflix</a>
+        <a href="#primevideo" class="nav-btn nb-ap">Prime Video</a>
+        <a href="#disneyplus" class="nav-btn nb-dp">Disney+</a>
+        <a href="#hulu" class="nav-btn nb-hu">Hulu</a>
+        <a href="#unext" class="nav-btn nb-un">U-NEXT</a>
+        <a href="#tver" class="nav-btn" style="background:#0068B7;">TVer</a>
+        <a href="#k-spotlight" class="nav-btn nb-kr">K-콘텐츠</a>
+        <a href="#trends" class="nav-btn nb-tr">시장 동향</a>
+        <a href="light.html" class="nav-btn" style="background:#fff;color:#000;margin-left:4px;">☀ 라이트</a>
+    </div>
+</nav>
+
+<!-- HERO: 이번 주 1위 -->
+<div class="container">
+    <div class="hero">
+        <div class="hero-img" style="background-image:url('https://img.cinematoday.jp/a/3TDmhXlH1kZu/_size_640x/_v_1757602476/main.jpg');"></div>
+        <div class="hero-body">
+            <div class="hero-badge">This Week #1</div>
+            <span class="hero-platform">NETFLIX</span>
+            <h2><a href="https://www.netflix.com/title/81700182" target="_blank">지옥에 떨어져라 (地獄に堕ちるわよ)</a></h2>
+            <div class="hero-meta"><span class="tag tag-top1">Net JP #1</span> 4/27 공개 · 토다 에리카 주연 · <strong>5/4~5/10 1위 유지 · 35일 연속 1위였던 구조의 대죄를 끌어내림</strong></div>
+            <div class="hero-desc">전설의 점술사 호소키 카즈코의 17~66세 일대기를 그린 일본 오리지널 대작. W19 기간 내내 Netflix Japan TOP1을 지키며, W17 시점 4주 연속 1위였던 구조의 대죄의 장기 집권을 끝냈다. 토다 에리카의 17~66세 1인 다역 연기 호평.</div>
+        </div>
+    </div>
+</div>
+
+<!-- 핵심 요약 -->
+<div class="container">
+    <div class="summary-section">
+        <h2>이번 주 핵심 요약</h2>
+        <ul class="summary-list">
+            <li><a href="https://www.netflix.com/title/81700182" target="_blank">지옥에 떨어져라</a> 4/27 공개 후 Netflix Japan <strong>#1 등극</strong>, W19 내내 1위 유지 — 일본 오리지널의 압도적 흥행</li>
+            <li><a href="https://flixpatrol.com/top10/netflix/japan/2026-05-04/" target="_blank">구조의 대죄</a> 1위 자리 내주고 <strong>#2로 하락</strong> — 35일 연속 1위 기록 마감 (역사적 장기 흥행)</li>
+            <li><a href="https://www.oricon.co.jp/news/2447652/full/" target="_blank">골드랜드 (Disney+ 4/29 공개)</a> — 박보영 다크 히로인 호평, 통합 OTT 차트 즉시 진입. K-콘텐츠 일본 흥행의 무게중심이 Disney+로 이동</li>
+            <li><strong>K-콘텐츠 Netflix Japan TOP10 부재 주 (W19)</strong> — 오늘도 매진했습니다도 W19 시점 차트 이탈, 한국 신작 일시 공백</li>
+            <li>다음 주 <strong>5/8「멋진 신세계」(素晴らしき新世界) Netflix 공개 예정</strong> — 임지연·허남준 주연 SBS 14부작, K-콘텐츠 반등 변수</li>
+            <li>일본 오리지널 강세 지속 — TAGUSARI bros, Reborn 등 신작 드라마 TOP5 안착</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 에디터스 코멘트 -->
+<div class="container">
+    <div style="background:linear-gradient(135deg,var(--surface) 0%,var(--surface-light) 100%);border:1px solid var(--border);border-left:4px solid var(--primary);border-radius:12px;padding:24px 28px;margin:0 auto 8px;max-width:760px;">
+        <h2 style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:12px;">EDITOR'S NOTE</h2>
+        <p style="font-size:14px;color:#bbb;line-height:1.8;margin-bottom:10px;">이번 주 가장 큰 이슈는 <strong style="color:var(--text);">"지옥에 떨어져라"의 압도적 흥행</strong>입니다. 4/27 공개 직후 Netflix Japan 차트 정상에 등극했고, W19 기간(5/1~5/7) 내내 #1을 유지했습니다. 더 의미 있는 건 이 작품이 <strong style="color:var(--text);">35일 연속 1위를 지키던 "구조의 대죄"를 끌어내렸다는 점</strong>입니다. 토다 에리카의 17~66세 1인 다역 연기, 호소키 카즈코라는 일본 사회사적 소재의 결합이 시청자를 끌어들였습니다.</p>
+        <p style="font-size:14px;color:#bbb;line-height:1.8;margin-bottom:10px;">반면 K-콘텐츠는 W19 시점 <strong style="color:var(--text);">Netflix Japan TOP10에서 자취를 감췄습니다.</strong> W17의 임팩트였던 "오늘도 매진했습니다"도 차트 이탈, 사냥개들 시즌2는 5주차에 접어들며 자연 감소, BEEF 시즌2는 처음부터 일본 TOP10 진입을 못 했습니다. <strong style="color:var(--text);">4월 K-콘텐츠 4편 연속 공개 직후의 일시적 공백</strong>으로 보는 게 정확합니다.</p>
+        <p style="font-size:14px;color:#bbb;line-height:1.8;margin-bottom:10px;">K-콘텐츠 흥행의 무게중심은 <strong style="color:var(--text);">Disney+의 "골드랜드"(4/29 공개)</strong>로 이동했습니다. 박보영의 첫 다크 히로인이라는 화제성에 더해, 공개 직후 한국 통합 OTT 차트 즉시 진입. 일본 시장 데이터는 아직 미공개이지만 Disney+ Japan에서도 화제가 되고 있습니다. <strong style="color:var(--text);">"Netflix만 K-콘텐츠 거점이 아니다"라는 신호</strong>로 읽을 만합니다.</p>
+        <p style="font-size:14px;color:#bbb;line-height:1.8;margin-bottom:10px;">일본 오리지널의 강세도 주목할 만합니다. 1위 지옥에 떨어져라, 2위 구조의 대죄(35일 1위 후 2위 하락), 3위 Reborn, 4위 TAGUSARI bros — <strong style="color:var(--text);">TOP4 전부가 일본 자체 콘텐츠</strong>입니다. 일본 자체 콘텐츠의 시장 장악력이 점점 더 단단해지는 흐름.</p>
+        <p style="font-size:14px;color:#bbb;line-height:1.8;">다음 주에는 <strong style="color:var(--text);">「멋진 신세계」(素晴らしき新世界) Netflix 5/8 공개</strong> + <strong style="color:var(--text);">「ワンダー・フールズ」 5/15 공개</strong> 등 한국 신작이 다시 줄지어 공개됩니다. W19의 K-콘텐츠 공백은 일시적이고, 5월 중하순부터는 다시 활발한 한일 콘텐츠 경쟁이 예상됩니다.</p>
+    </div>
+</div>
+
+<!-- Netflix -->
+<div class="platform-section" id="netflix">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://www.netflix.com/browse" target="_blank" class="platform-badge badge-netflix">NETFLIX</a>
+            <h2>Netflix Japan</h2>
+        </div>
+        <table class="ranking-table">
+            <thead><tr><th>순위</th><th>작품명</th><th>장르</th><th>비고</th></tr></thead>
+            <tbody>
+                <tr><td><span class="rank-num">1</span></td><td><a href="https://www.netflix.com/title/81700182" target="_blank" style="color:var(--accent-blue);text-decoration:none;">지옥에 떨어져라 (地獄に堕ちるわよ)</a></td><td>일본 오리지널</td><td>4/27 공개 · 5/4~5/10 1위 유지</td></tr>
+                <tr><td><span class="rank-num">2</span></td><td><a href="https://www.netflix.com/title/81581947" target="_blank" style="color:var(--accent-blue);text-decoration:none;">구조의 대죄 (九条の大罪)</a></td><td>크라임 드라마</td><td>35일 연속 1위 마감, 2위로 하락</td></tr>
+                <tr><td><span class="rank-num">3</span></td><td>Reborn (リボーン)</td><td>일본 드라마</td><td>13일째 진입</td></tr>
+                <tr><td><span class="rank-num">4</span></td><td>TAGUSARI bros.</td><td>일본 오리지널</td><td>17일째 진입, +2 상승</td></tr>
+                <tr><td><span class="rank-num">5</span></td><td>Daemons of the Shadow Realm</td><td>애니메이션</td><td>21일째 진입</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:11px;color:var(--text-muted);margin:-18px 0 26px;">출처: <a href="https://flixpatrol.com/top10/netflix/japan/2026-05-07/" target="_blank" style="color:var(--accent-blue);text-decoration:none;">FlixPatrol — Netflix Japan TOP 10 (2026-05-07 기준)</a> · W19 시점 K-콘텐츠는 TOP10 부재</p>
+        <div class="section-subtitle">이번 주 흥행작 & 지난 호 트래킹</div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://img.cinematoday.jp/a/3TDmhXlH1kZu/_size_640x/_v_1757602476/main.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-top1">Net JP #1</span> <a href="https://www.netflix.com/title/81700182" target="_blank">지옥에 떨어져라 (地獄に堕ちるわよ)</a></div>
+                <div class="card-meta">4/27 공개 · 토다 에리카 주연 · 5/4~5/10 1위 유지</div>
+                <div class="card-desc">전설의 점술사 호소키 카즈코의 17~66세를 그린 일본 오리지널 대작. <strong>공개 직후 Netflix Japan #1 등극, 35일 연속 1위였던 "구조의 대죄"를 끌어내렸다.</strong> 토다 에리카의 1인 다역 연기가 핵심 화제, 일본 사회사적 인물 소재의 흥행력 입증.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-body" style="padding:20px 22px;">
+                <div class="card-title"><span class="tag tag-top1">Net JP #2</span> <a href="https://www.netflix.com/title/81581947" target="_blank">구조의 대죄 (九条の大罪)</a></div>
+                <div class="card-meta">35일 연속 1위 마감 → 2위 하락 · W19 기준 35일째 TOP10</div>
+                <div class="card-desc">일본 오리지널 크라임 드라마. 2026년 봄 시즌 최장기 1위 기록. W19 들어 지옥에 떨어져라에게 1위 자리 내주었지만, 여전히 TOP3 상위권 유지. 일본 자체 콘텐츠 흥행력의 상징적 작품.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://cdn.spotvnews.co.kr/news/photo/202603/801570_1305451_3141.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <a href="https://navicon.jp/news/96395/" target="_blank">사냥개들 시즌2</a></div>
+                <div class="card-meta">4/3 공개 · W19은 5주차 · TOP10 이탈</div>
+                <div class="card-desc">2주차(4/6~4/12) 740만 뷰 글로벌 1위 정점 후 자연 감소 곡선. W19 시점엔 일본 TOP10 밖. 시즌1 대비 폭발적 성장이라는 결론은 유지되며, 한국 액션 장르의 글로벌 경쟁력 입증 완료.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://www.whats-on-netflix.com/wp-content/uploads/2026/01/sold-on-you-sbs-netflix-k-drama-coming-q2-2026.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <a href="https://mydramalist.com/788726-it-s-sold-out-again-today" target="_blank">오늘도 매진했습니다 (Sold Out on You)</a></div>
+                <div class="card-meta">4/22 공개 · W19은 3주차 · TOP10 이탈</div>
+                <div class="card-desc">W17 공개 직후 Net Japan #3까지 진입했던 SBS 로맨틱 코미디. W19에는 차트에서 빠졌지만 K-로맨스 장르의 일본 흥행 가능성을 보여준 의미는 유효. 안효섭·채원빈·김범 주연.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-body" style="padding:20px 22px;">
+                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <span class="tag tag-upcoming">예정</span> <a href="https://www.netflix.com/title/81935054" target="_blank">멋진 신세계 (素晴らしき新世界 / My Royal Nemesis)</a></div>
+                <div class="card-meta">5/8 Netflix 공개 예정 · SBS 14부작 · 임지연, 허남준 주연</div>
+                <div class="card-desc">조선 시대 악녀의 영혼이 21세기 서울의 무명 배우 신소리(임지연)의 몸에 빙의하면서 시작되는 로맨스 코미디. 냉혹한 재벌 후계자 차세계(허남준)와의 악연이 그녀의 운명을 다시 쓴다. <strong>W19 다음 주(5/8) Netflix Japan 공개 예정 K-콘텐츠</strong>, W19의 한국 신작 일시 공백 이후 첫 반등 후보.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Amazon Prime Video -->
+<div class="platform-section" id="primevideo">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://www.amazon.co.jp/gp/video/storefront" target="_blank" class="platform-badge badge-amazon">PRIME VIDEO</a>
+            <h2>Amazon Prime Video Japan</h2>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://assets.aboutamazon.com/42/fe/d3acf2e4419c8969a8d8f2eed51f/the-boys-s5-humans.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://www.aboutamazon.com/news/entertainment/the-boys-eric-kripke-season-5-prime-video" target="_blank">더 보이즈 (The Boys) 파이널 시즌</a></div>
+                <div class="card-meta">4/8~ 매주 수요일 · 방영 중</div>
+                <div class="card-desc"><strong>줄거리:</strong> 홈랜더가 세상을 지배한 세계에서, 빌리 부처가 더 보이즈를 다시 모아 최종 대결에 나선다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://assets.aboutamazon.com/dims4/default/bf53698/2147483647/strip/true/crop/800x510+0+0/resize/800x510!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F57%2F5d%2Fe0626c1046fcbf7e36a2dd5cfc0f%2Fprime-video-dog-and-boy.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://www.aboutamazon.jp/news/entertainment/amazon-prime-video-new-content-april-2026" target="_blank">소년과 개 (少年と犬)</a></div>
+                <div class="card-meta">4/20 공개 · 나오키상 수상 소설 원작 · 시청 가능</div>
+                <div class="card-desc"><strong>줄거리:</strong> 소중한 사람을 찾아 서쪽으로 일본을 종단하는 한 마리 개와 상처받은 사람들의 이야기.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://image.tmdb.org/t/p/original/ubgOSHAEhv1ds8BNHodhCcI13oH.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://www.aboutamazon.jp/news/entertainment/amazon-prime-video-new-content-april-2026" target="_blank">28 Years Later: The Bone Temple</a></div>
+                <div class="card-meta">4/23 공개 · 디지털 배포 · 시청 가능</div>
+                <div class="card-desc">니아 다코스타 감독의 포스트 아포칼립스 호러. 전작에 이은 시리즈 속편으로 디지털 배포 개시.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Disney+ -->
+<div class="platform-section" id="disneyplus">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://www.disneyplus.com/ja-jp" target="_blank" class="platform-badge badge-disney">DISNEY+</a>
+            <h2>Disney+ Japan</h2>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://d1uzk9o9cg136f.cloudfront.net/f/16782943/rc/2026/03/25/2cca0b54caa4627be94d2ccabd626bd2760a514b_xlarge.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://www.disneyplus.com/browse/entity-9ba0f41b-6173-4ff1-8967-71cad0620244" target="_blank">스타워즈: 몰 - 쉐도우 로드</a></div>
+                <div class="card-meta">매주 월요일 방영 중 · Rotten Tomatoes 100%</div>
+                <div class="card-desc"><strong>줄거리:</strong> 제국의 손이 닿지 않는 행성에서 범죄 조직을 재건하려는 몰이, 젊은 제다이 파다완과 만나 복수의 길을 걷는다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://d1uzk9o9cg136f.cloudfront.net/f/16782943/rc/2026/03/25/83893b54823fca2d2671be07b6530b1c8ff98264_xlarge.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <a href="https://www.cinemacafe.net/article/2026/04/08/108494.html" target="_blank">유미의 세포들 시즌3</a></div>
+                <div class="card-meta">4/13~ 방영 중 · 김고은, 김재원</div>
+                <div class="card-desc"><strong>줄거리:</strong> 인기 작가로 성장한 유미의 머릿속 세포들이, 새로운 인물의 등장으로 다시 한번 사랑의 스위치를 켠다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://www.animatetimes.com/wp-content/uploads/2025/11/f9682a1cecb4770836677275816a76d7691944b900b939_01082870_95e193dd7398613d91b9f4a511f28b00704c9308.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://disneyplus.disney.co.jp/news/2026/04_recommend" target="_blank">교실의 엘리트 4기</a></div>
+                <div class="card-meta">방영 중 · 인기 라이트노벨 원작 애니메이션</div>
+                <div class="card-desc"><strong>줄거리:</strong> 실력만이 전부인 엘리트 학교에서, 숨겨진 천재 아야노코지가 치밀한 두뇌 싸움으로 학급을 최상위로 끌어올린다.</div>
+            </div>
+        </div>
+        <div class="section-subtitle">이번 주 K-Hit (Disney+)</div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://contents.oricon.co.jp/upimg/news/2448000/2447652/20260408_183313_p_l_59590557.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <span class="tag tag-top1">통합 OTT #1</span> <a href="https://www.oricon.co.jp/news/2447652/full/" target="_blank">골드랜드 (ゴールドランド)</a></div>
+                <div class="card-meta">4/29 공개 · 전10화 · 박보영, 김희원 주연</div>
+                <div class="card-desc"><strong>한적한 시골 출신 히주가 밀수 조직 금괴를 우연히 손에 넣으며 도주극에 휘말린다.</strong> 박보영 첫 다크 히로인. <strong>공개 직후 한국 통합 OTT 차트 즉시 1위 진입</strong>, "수요일의 병을 치료해주는 작품"이라는 별명으로 호평. W19 시점 일본 Disney+에서도 화제. K-콘텐츠 흥행 무게중심이 Netflix → Disney+로 이동했음을 보여주는 신호.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hulu -->
+<div class="platform-section" id="hulu">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://www.hulu.jp/" target="_blank" class="platform-badge" style="background:#1CE783;color:#000;">Hulu</a>
+            <h2>Hulu Japan</h2>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://dramanavi.net/wp-content/uploads/2026/02/OUTLANDER_S8-1.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://dramanavi.net/articles/320777" target="_blank">아웃랜더 시즌8 (파이널)</a></div>
+                <div class="card-meta">방영 중 · 다이애나 개벌던 베스트셀러 원작</div>
+                <div class="card-desc"><strong>줄거리:</strong> 18세기 스코틀랜드로 시간이동한 클레어와 제이미 부부의 판타지 로맨스 대작 최종 시즌.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://realsound.jp/wp-content/uploads/2026/03/20260319-getuya-01.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://www.oricon.co.jp/drama/618/" target="_blank">월야행로 (月夜行路) ―답은 명작 속에―</a></div>
+                <div class="card-meta">방영 중 · 하루, 아소 쿠미코 주연</div>
+                <div class="card-desc"><strong>줄거리:</strong> 문학을 사랑하는 바 주인과 갈 곳 잃은 주부가 여행을 떠나며, 명작 문학의 지식으로 사건의 진상에 다가간다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://www.tvinsider.com/wp-content/uploads/2024/09/law-order-svu-season-26-poster-456x570.jpeg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://www.hulu.jp/features/recently-added-international-series" target="_blank">LAW & ORDER: 성범죄 특수반 시즌26</a></div>
+                <div class="card-meta">방영 중 · 올리비아 벤슨 형사 주연</div>
+                <div class="card-desc"><strong>줄거리:</strong> 뉴욕을 무대로 충격적인 성범죄 사건을 수사하는 특수반의 이야기. 미국 최장수 범죄 수사 시리즈.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- U-NEXT -->
+<div class="platform-section" id="unext">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://video.unext.jp/" target="_blank" class="platform-badge badge-unext">U-NEXT</a>
+            <h2>U-NEXT</h2>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2026/03/HEMrQlgbkAAakht.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://vod.app-liv.jp/archive/133798/" target="_blank">유포리아 (EUPHORIA) 시즌3</a></div>
+                <div class="card-meta">4/13~ 방영 중 · U-NEXT 독점 배포</div>
+                <div class="card-desc"><strong>줄거리:</strong> 시즌2 이후 5년, 루(젠데이아)와 친구들이 성인이 되어가며 직면하는 새로운 현실과 갈등을 그린다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://www.thefirsttimes.jp/admin/wp-content/uploads/5000/10/20241016-ty-101202.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://video.unext.jp/ranking" target="_blank">그랑메종 도쿄 시리즈</a></div>
+                <div class="card-meta">키무라 타쿠야 주연 · 드라마 부문 상위 유지</div>
+                <div class="card-desc"><strong>줄거리:</strong> 파리에서 실패한 천재 셰프가 도쿄에서 미슐랭 3스타를 목표로 새로운 레스토랑에 도전한다.</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <div class="card-poster" style="background-image:url('https://media.eiga.com/images/movie/100801/photo/4ea5d7812a221445.jpg');"></div>
+            <div class="card-body">
+                <div class="card-title"><a href="https://www.unext.co.jp/en/press-room/conan-coming-2026-03-21" target="_blank">명탐정 코난: 100만 달러의 오릉성</a></div>
+                <div class="card-meta">극장판 애니메이션 · U-NEXT 첫 배포</div>
+                <div class="card-desc"><strong>줄거리:</strong> 하코다테를 무대로 괴도 키드와 헤이지가 검에 숨겨진 보물의 비밀을 둘러싸고 대결한다.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TVer -->
+<div class="platform-section" id="tver">
+    <div class="container">
+        <div class="platform-header">
+            <a href="https://tver.jp/" target="_blank" class="platform-badge" style="background:#0068B7;color:#fff;">TVer</a>
+            <h2>TVer (무료)</h2>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);margin:-10px 0 18px;">일본 민방 5사 공동 무료 스트리밍 · 월간 4,120만 유저 · 광고 기반</p>
+
+        <div class="section-subtitle">최근 재생수 TOP 5 (4/13~4/19 데이터 · W19용 갱신 예정)</div>
+        <table class="ranking-table">
+            <thead><tr><th>순위</th><th>작품명</th><th>포인트</th><th>비고</th></tr></thead>
+            <tbody>
+                <tr><td><span class="rank-num">1</span></td><td><a href="https://tver.jp/rankings/episode/drama" target="_blank" style="color:var(--accent-blue);text-decoration:none;">사레타가와의 복수 ~동맹을 맺은 아내들~</a></td><td>3,850</td><td>TV도쿄 · 복수 드라마</td></tr>
+                <tr><td><span class="rank-num">2</span></td><td>리본 최후의 히어로 (リボーン最後のヒーロー)</td><td>3,620</td><td>봄 신작 드라마</td></tr>
+                <tr><td><span class="rank-num">3</span></td><td>네가 사형이 되기 전에 (君が死刑になる前に)</td><td>3,510</td><td>타임슬립 스릴러</td></tr>
+                <tr><td><span class="rank-num">4</span></td><td>부부별성형사 (夫婦別姓刑事)</td><td>3,490</td><td>봄 신작 · 사회파 수사극</td></tr>
+                <tr><td><span class="rank-num">5</span></td><td>아이를 낳지 않는 여자는 안 되나요? (DINKs)</td><td>3,420</td><td>사회파 드라마</td></tr>
+            </tbody>
+        </table>
+
+        <div class="section-subtitle">K-콘텐츠 on TVer</div>
+        <div class="content-card no-poster">
+            <div class="card-body">
+                <div class="card-title"><span class="tag tag-kr">K-콘텐츠</span> <a href="https://tver.jp/" target="_blank">한국 드라마 무료 배포 확대 중</a></div>
+                <div class="card-meta">BS10 지상파 방송분 + TVer 다시보기</div>
+                <div class="card-desc">TVer가 2026년 봄부터 BS10 한국 드라마의 다시보기 배포를 시작. 유료 OTT가 아닌 무료 플랫폼에서 한국 드라마를 접하는 일본 시청자층이 늘어나고 있는 추세. K-콘텐츠의 일본 내 접근성이 한 단계 더 넓어진 셈.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 한국 콘텐츠 스포트라이트 -->
+<div class="spotlight-wrap" id="k-spotlight">
+    <div class="spotlight-section">
+        <div class="container">
+            <h2>한국 콘텐츠 스포트라이트</h2>
+            <p>W19은 Netflix Japan TOP10에서 K-콘텐츠가 일시적으로 자취를 감춘 주였습니다. 흥행 무게중심이 Netflix → Disney+로 옮겨가는 신호이기도 합니다.</p>
+
+            <div class="spotlight-card">
+                <div class="spotlight-poster" style="background-image:url('https://contents.oricon.co.jp/upimg/news/2448000/2447652/20260408_183313_p_l_59590557.jpg');"></div>
+                <div class="spotlight-body">
+                    <h3><a href="https://www.oricon.co.jp/news/2447652/full/" target="_blank">골드랜드 (ゴールドランド)</a> <span class="tag tag-top1">통합 OTT #1</span></h3>
+                    <div class="platform-label">Disney+ · 4/29 공개</div>
+                    <dl>
+                        <dt>성과</dt><dd>공개 직후 한국 통합 OTT 차트 즉시 1위 진입, "수요일의 병을 치료" 별명</dd>
+                        <dt>출연</dt><dd>박보영(첫 다크 히로인), 김희원</dd>
+                        <dt>포인트</dt><dd>W19 K-콘텐츠 흥행 중심이 Disney+로 이동. 박보영의 인지도+연기 변신이 견인</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="spotlight-card">
+                <div class="spotlight-poster" style="background-image:url('https://www.whats-on-netflix.com/wp-content/uploads/2026/01/sold-on-you-sbs-netflix-k-drama-coming-q2-2026.jpg');"></div>
+                <div class="spotlight-body">
+                    <h3><a href="https://mydramalist.com/788726-it-s-sold-out-again-today" target="_blank">오늘도 매진했습니다</a></h3>
+                    <div class="platform-label">Netflix · 4/22 공개 · W19은 3주차</div>
+                    <dl>
+                        <dt>W17 정점</dt><dd>공개 직후 Net Japan #3 진입</dd>
+                        <dt>W19</dt><dd>TOP10에서 이탈, 자연 감소 곡선</dd>
+                        <dt>포인트</dt><dd>K-로맨스의 일본 흥행 가능성 보여준 성과는 유효. SBS 본방은 5/28까지 진행</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="spotlight-card">
+                <div class="spotlight-poster" style="background-image:url('https://cdn.spotvnews.co.kr/news/photo/202603/801570_1305451_3141.jpg');"></div>
+                <div class="spotlight-body">
+                    <h3><a href="https://navicon.jp/news/96395/" target="_blank">사냥개들 시즌2</a></h3>
+                    <div class="platform-label">Netflix · 4/3 공개 · W19은 5주차</div>
+                    <dl>
+                        <dt>정점</dt><dd>2주차(4/6~4/12): 740만 뷰, 비영어 드라마 글로벌 1위, 80개국 TOP10</dd>
+                        <dt>W19</dt><dd>5주차로 자연 감소, 일본 TOP10 밖</dd>
+                        <dt>포인트</dt><dd>한국 액션 장르의 글로벌 경쟁력 입증 완료. 시즌3 제작 논의 단계</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="spotlight-card">
+                <div class="spotlight-body" style="padding:22px 26px;">
+                    <h3>다음 주 K-콘텐츠 (W20 예고)</h3>
+                    <div class="platform-label">Netflix · 5/8 공개</div>
+                    <dl>
+                        <dt>멋진 신세계</dt><dd>(素晴らしき新世界 / My Royal Nemesis) 5/8 Netflix 공개 예정 · 임지연·허남준 주연 SBS 14부작. W19 K-콘텐츠 공백 이후 첫 반등 후보</dd>
+                        <dt>ワンダー・フールズ</dt><dd>5/15 Netflix 공개 예정. 5월 중하순 K-콘텐츠 라인업의 시작점</dd>
+                        <dt>포인트</dt><dd>W19의 K-콘텐츠 공백은 일시적, 5월 중하순부터 한국 신작 반등 흐름 예상</dd>
+                    </dl>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 시장 동향 -->
+<div class="trends-section" id="trends">
+    <div class="container">
+        <h2>시장 동향 메모</h2>
+        <div class="trend-item">
+            <div class="trend-num">1</div>
+            <div><h3>"지옥에 떨어져라" 4/27 공개 후 Netflix Japan #1 등극 — 35일 연속 1위였던 "구조의 대죄"의 장기집권 마감</h3><p>토다 에리카 주연 일본 오리지널이 공개 직후 1위 등극, W19(5/1~5/7) 내내 1위 유지. 5/4~5/10 1위 유지 명시. 일본 사회사적 인물(호소키 카즈코) 소재의 흥행력 입증. <a href="https://flixpatrol.com/top10/netflix/japan/2026-05-07/" target="_blank" style="color:var(--accent-blue);font-size:12px;">[출처]</a></p></div>
+        </div>
+        <div class="trend-item">
+            <div class="trend-num">2</div>
+            <div><h3>K-콘텐츠 Netflix Japan TOP10 일시 부재 주 (W19) — 4월 4편 연속 공개 직후의 자연스러운 공백</h3><p>오늘도 매진했습니다(W17 #3 진입 작품)도 W19 시점 TOP10 이탈. 사냥개들 시즌2는 5주차로 자연 감소. 4월 K-콘텐츠 라인업이 일시 휴지, 5/8「멋진 신세계」(素晴らしき新世界) 공개로 반등 예상. <a href="https://flixpatrol.com/top10/netflix/japan/2026-05-07/" target="_blank" style="color:var(--accent-blue);font-size:12px;">[출처]</a></p></div>
+        </div>
+        <div class="trend-item">
+            <div class="trend-num">3</div>
+            <div><h3>K-콘텐츠 흥행 무게중심, Netflix → Disney+로 이동 — "골드랜드" 4/29 공개 즉시 통합 OTT #1</h3><p>박보영 다크 히로인 첫 도전작이 공개 직후 한국 통합 OTT 차트 1위. "수요일의 병 치료" 별명. 일본 Disney+에서도 화제. <strong>"Netflix만 K-콘텐츠 거점"이라는 통념의 균열</strong> 가능성. <a href="https://www.oricon.co.jp/news/2447652/full/" target="_blank" style="color:var(--accent-blue);font-size:12px;">[출처]</a></p></div>
+        </div>
+        <div class="trend-item">
+            <div class="trend-num">4</div>
+            <div><h3>일본 오리지널 4편이 Netflix Japan TOP4 점령 — 자체 콘텐츠 시장 장악력 강화</h3><p>1위 지옥에 떨어져라, 2위 구조의 대죄, 3위 Reborn, 4위 TAGUSARI bros. TOP4 전부가 일본 자체 콘텐츠. K-콘텐츠 공세 속에서도 일본 오리지널의 견고한 시장 점유 확인. <a href="https://flixpatrol.com/top10/netflix/japan/2026-05-07/" target="_blank" style="color:var(--accent-blue);font-size:12px;">[출처]</a></p></div>
+        </div>
+        <div class="trend-item">
+            <div class="trend-num">5</div>
+            <div><h3>일본 OTT 시장 162억 달러, 2034년 613억 달러 전망</h3><p>CAGR 15.91%. 커넥티드TV 광고 시장 2026년 1,655억엔 (2023년 대비 2배+). OTT 광고 시장의 급성장이 플랫폼 투자 확대를 견인. <a href="https://www.atpress.ne.jp/news/6000032" target="_blank" style="color:var(--accent-blue);font-size:12px;">[출처]</a></p></div>
+        </div>
+        <div class="trend-item">
+            <div class="trend-num">6</div>
+            <div><h3>스포츠 라이브 중계, OTT 플랫폼 차별화 핵심으로 부상</h3><p>Amazon Prime Video MLB 350경기+, U-NEXT UFC 독점. 라이브 콘텐츠가 광고 수익 핵심으로 중계권 투자 경쟁 가속. <a href="https://www.aboutamazon.jp/news/entertainment/prime-video-spotv-expands-2026-mlb-coverage" target="_blank" style="color:var(--accent-blue);font-size:12px;">[출처]</a></p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="container">
+        <p>본 리포트는 각 플랫폼 공식 발표, 일본 미디어 보도, SNS 화제성을 기반으로 작성되었습니다.</p>
+        <div class="next-issue">다음 호 발행 예정: 2026년 5월 2주차 (5/8 ~ 5/14)</div>
+        <a href="subscribe.html" style="display:inline-block;margin-top:18px;padding:12px 32px;background:#FF0558;color:#fff;font-size:14px;font-weight:700;border-radius:8px;text-decoration:none;">뉴스레터 구독하기</a>
+        <div class="archive-wrap">
+            <span class="archive-toggle" onclick="document.getElementById('archiveList').classList.toggle('open')">이전호 보기 ▾</span>
+            <div class="archive-list" id="archiveList">
+                <a href="/weekly/2026-W17">W17 — 4월 4주차 (4/17 ~ 4/23)<span class="archive-date">2026.04.25</span></a>
+                <a href="/archive/2026-W16.html">W16 — 4월 3주차 (4/10 ~ 4/16)<span class="archive-date">2026.04.18</span></a>
+            </div>
+        </div>
+        <p style="margin-top:20px;font-size:12px;color:#555;">Kletter &copy; 2026</p>
+        <p class="adp-service-desc" style="margin-top:8px;font-size:11px;color:#444;">일본 OTT 6개 플랫폼 K-콘텐츠 주간 트렌드 리포트 — kletter.watcha.io</p>
+    </div>
+</div>
+
+</body>
+</html>
